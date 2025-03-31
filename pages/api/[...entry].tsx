@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function verifyLogin(req: NextApiRequest, res: NextApiResponse) {
   const { entry } = req.query;
-  const bcrypt = require("bcryptjs")
+  const bcrypt = require("bcryptjs");
 
   try{
     const client = await clientPromise;
@@ -23,12 +23,17 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
           });
         }
       } else {
-        res.status(404).json({ "status": false });
+        res.status(204).json({
+          "status": true,
+          "userFound": false
+        });
       }
     } else {
       res.status(200).json({
-        "status": true,
-        "userFound": false
+        "status": false,
+        "reqType": req.method,
+        "isArray": Array.isArray(entry),
+        "arrayLength": entry!.length
       });
       return;
     }
