@@ -1,7 +1,7 @@
 "use server"
 import React, { useState } from "react";
 
-const LoginForm = () =>{
+const LoginForm = () => {
   const [user, setUser] = useState("");
   const [senha, setSenha] = useState("");
   const bcrypt = require("bcryptjs");
