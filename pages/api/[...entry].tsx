@@ -17,9 +17,10 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
         if (compareEncryptedPassword == true){
           res.status(200).json({
             status: true,
+            "userFound": compareEncryptedPassword,
             nome: entry[0],
-            type: searchUser.type,
-            "userFound": compareEncryptedPassword
+            guiTheme: searchUser.guiTheme,
+            userType: searchUser.type
           });
         }
       } else {
