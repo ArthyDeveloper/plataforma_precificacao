@@ -1,0 +1,7 @@
+.btnAdminSelector{
+    @apply font-bold w-[100px] h-full bg-gray-800 transition-all duration-150 ease-in-out;
+}
+
+.btnAdminSelector:hover{
+    @apply bg-gray-900;
+}
