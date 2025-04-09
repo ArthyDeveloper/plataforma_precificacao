@@ -19,7 +19,6 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
             status: true,
             "userFound": compareEncryptedPassword,
             nome: entry[0],
-            guiTheme: searchUser.guiTheme,
             userType: searchUser.type
           });
         }
