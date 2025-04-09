@@ -1,15 +1,54 @@
-.btnAdminSelector{
-  @apply
-    font-bold
-    w-[100px]
-    h-full
-    bg-gray-800
-    transition-all
-    duration-150
-    ease-in-out;
+/* Admin Panels Buttons */
+.btnAdminSelector{ @apply
+  font-bold
+  w-[100px]
+  h-full
+  bg-gray-800
+  transition-all
+  duration-100
+  ease-in-out;
 }
 
-.btnAdminSelector:hover{
-  @apply
+.btnAdminSelector:hover{ @apply
   bg-gray-900;
+}
+
+/* Inputs */
+.adminInputDiv{ @apply
+  relative
+  w-max
+  top-1/2 left-1/2
+  transform -translate-x-1/2 -translate-y-1/2
+  flex flex-col
+  items-center
+}
+
+.adminRegisterH1{ @apply
+  ml-[8px]
+  text-lg;
+}
+
+.adminInput{ @apply
+  relative
+  p-[10px]
+  w-[180px]
+  text-lg
+  rounded-sm
+  mt-2
+  outline-none;
+}
+
+.adminRegisterBtn{ @apply
+  relative
+  w-28
+  h-10
+  rounded-lg
+  mt-3
+  font-bold
+  transition duration-100
+  bg-gray-800
+}
+
+.adminRegisterBtn:hover{ @apply
+  bg-gray-600
 }
