@@ -1,7 +1,7 @@
-import clientPromise from "../../lib/mongodb";
+import clientPromise from "../../../lib/mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function verifyLogin(req: NextApiRequest, res: NextApiResponse) {
+export default async function verifyLogin(req: NextApiRequest, res: NextApiResponse){
   const { entry } = req.query;
   const bcrypt = require("bcryptjs");
 
