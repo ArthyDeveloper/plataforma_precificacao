@@ -10,8 +10,14 @@ const Dashboard_Admin = () => {
           <button className="btnAdminSelector">Register</button>
           <button className="btnAdminSelector">Remove</button>
         </div>
+
         {/* Register Form */}
-        <div className="relative w-full h-auto bg-gray-700"></div>
+        <div className="relative w-full h-auto bg-gray-700">
+          <input placeholder="Nome"></input>
+          <input placeholder="Email"></input>
+          <input placeholder="Senha"></input>
+          <input placeholder="Telefone"></input>
+        </div>
       </div>
     </div>
   );
