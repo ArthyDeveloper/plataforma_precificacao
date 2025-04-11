@@ -5,8 +5,15 @@ import Dashboard_Client from "../components/Dashboard_Client";
 import Dashboard_Admin from "../components/Dashboard_Admin";
 
 export default function Home() {
-  const [logado, setLogado] = useState(false);
-  const [usuário, setUsuário] = useState<User | null>(null);
+  //const [logado, setLogado] = useState(false);
+  //const [usuário, setUsuário] = useState<User | null>(null);
+  
+  //Temporário para trabalhar em UI's;
+  const logado = true; 
+  const usuário = {
+    name: "Dev",
+    userType: "admin",
+  };
 
   type User = {
     name: string;

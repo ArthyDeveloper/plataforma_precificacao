@@ -65,7 +65,7 @@ const Dashboard_Admin = ({user}) => {
   }
 
   return(
-    <div className="absolute top-0 left-0 w-full h-full bg-gray-500 overflow-x-hidden">
+    <div className="absolute top-0 left-0 w-full h-full bg-gray-900 overflow-x-hidden">
       <div className="relative rounded-sm top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[500px] bg-gray-700 overflow-hidden">
         {/* Top Bar - Options */}
         <div className="relative rounded-t-sm w-full h-[40px] bg-gray-800 justify-evenly flex text-white text-center">
