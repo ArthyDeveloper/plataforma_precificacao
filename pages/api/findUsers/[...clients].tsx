@@ -11,7 +11,7 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
     const col = db.collection("Users");
 
     if (req.method === "GET" && Array.isArray(clients) && clients.length === 3){
-      let searchUser = await col.findOne({"name": clients[0]});
+      let searchUser = await col.findOne({"name": clients[0], "userType": "admin"});
       if (searchUser != null){
         const compareEncryptedPassword = await bcrypt.compare(clients[1], searchUser.password);
         if (compareEncryptedPassword == true){

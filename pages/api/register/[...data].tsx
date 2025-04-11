@@ -11,7 +11,7 @@ export default async function register(req:NextApiRequest, res:NextApiResponse){
     const col = db.collection("Users");
 
     if (req.method === "POST" && Array.isArray(data) && data.length === 6){
-      let validateAdmin = await col.findOne({"name": data[0]});
+      let validateAdmin = await col.findOne({"name": data[0], "userType": "admin"});
       if (validateAdmin != null){
         const compareEncryptedPassword = await bcrypt.compare(data[1], validateAdmin.password);
         if (compareEncryptedPassword == true){

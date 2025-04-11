@@ -36,6 +36,7 @@ const Dashboard_Admin = () => {
   }
 
   useEffect(() => {
+    {/* Trocar para aceitar login de admin após painel admin */}
     listUsers("Admin", "123");
   }, []);
 
