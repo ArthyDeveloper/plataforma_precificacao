@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import "../styles/dashboardAdmin.css";
 
-const Dashboard_Admin = () => {
-  const [user, setUser] = useState("");
+const Dashboard_Admin = ({user}) => {
+  const [usuário, setUser] = useState("");
   const [senha, setSenha] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
@@ -99,7 +99,7 @@ const Dashboard_Admin = () => {
           {/* Register Form */}
           {activePage === "Registrar" && (
             <div className="adminInputDiv">
-              <input value={user} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
+              <input value={usuário} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
               <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>
@@ -112,7 +112,7 @@ const Dashboard_Admin = () => {
           {/* Update Form */}
           {activePage === "Update" && (
             <div className="adminInputDiv">
-              <input value={user} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
+              <input value={usuário} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
               <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>

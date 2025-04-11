@@ -1,15 +1,9 @@
 "use server"
 import React, { useState } from "react";
 
-const LoginForm = () => {
+const LoginForm = ({onLoginSuccess}) => {
   const [user, setUser] = useState("");
   const [senha, setSenha] = useState("");
-  const bcrypt = require("bcryptjs");
-  const saltRounds = 10;
-
-  const mudarSetLembrar = (e) => {
-    setLembrar(e.target.checked);
-  };
 
   const login = async (user, senha) => {
     const url = "/api/login";
@@ -28,19 +22,17 @@ const LoginForm = () => {
 
       const data = await response.json();
       
-      if (data.userFound === true){
-        console.log("Usuário Logado")
+      if (data.userFound){
+        onLoginSuccess({
+          name: data.name,
+          userType: data.userType
+        });
       } else {
         alert("Usuário(a) ou senha incorreto.")
       }
     } catch (error) {
       console.error("Erro:", error);
     }
-  }
-
-  async function teste(){
-    console.log("Usuário: ", user, "| Senha: ", await bcrypt.hash(senha, saltRounds));
-    console.log(await bcrypt.compare("1234", "$2b$10$XchmxvWc4h0uPC3tlK2HL.M0SSI7N7jcIkxw0gl1NU.n3fHzRHuqm"))
   }
 
   return (
@@ -55,7 +47,7 @@ const LoginForm = () => {
           <h2 className="absolute w-[55px] top-[-15px] left-[10px] bg-white">Senha</h2>
           <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} className="rounded-xl text-sm pl-[10px] pr-[10px] border-gray border-2 h-[40px] w-[180px]"></input>
         </div>
-        <button onClick={() => login(user, senha)} className="relative rounded-xl w-[80px] h-[35px] mt-[20px] bg-blue-400 hover:bg-blue-500">Entrar</button>
+        <button onClick={() => login(user, senha)} className="relative pb-1 rounded-xl w-[80px] h-[35px] mt-[20px] bg-blue-400 hover:bg-blue-500">Entrar</button>
       </div>
     </div>
   );
