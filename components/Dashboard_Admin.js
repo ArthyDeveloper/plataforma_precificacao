@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "../styles/dashboardAdmin.css";
 
 const Dashboard_Admin = () => {
@@ -9,12 +9,35 @@ const Dashboard_Admin = () => {
   const [admin, setAdmin] = useState("");
   const [adminPwd, setAdminPwd] = useState("");
   const [activePage, setActivePage] = useState("");
+  const [usersDocuments, setUsersDocuments] = useState("");
 
   const mudarPágina = (página) => {
     setActivePage(página);
   }
 
   const buttonClasses = (página) => activePage === página ? "!bg-gray-900 text-white" : "!bg-gray-800";
+
+  async function listUsers(admin, adminPwd){
+    const url = `/api/findUsers/${admin}/${adminPwd}/client`;
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data?.searchDocuments?.length) {
+        console.log(data)
+        setUsersDocuments(data.searchDocuments);
+      } else {
+        setUsersDocuments([]);
+      }
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      setUsersDocuments([]);
+    }
+  }
+
+  useEffect(() => {
+    listUsers("Admin", "123");
+  }, []);
 
   async function register(){
     console.log(admin, adminPwd, user, senha, email, telefone);
@@ -61,7 +84,15 @@ const Dashboard_Admin = () => {
 
           {/* Users Form */}
           {activePage === "Usuários" && (
-            <h1>Usuários</h1>
+            <div className="centerDiv usersDiv">
+              {usersDocuments.map((user, index) => (
+                <div className={`userBox ${index === 0 ? "!mt-0" : ""}`} key={index}>
+                  <h3 className="font-semibold">{user.name}</h3>
+                  <p>{`Email: ${user.email}`}</p>
+                  <p>{`Telefone: ${user.number}`}</p>
+                </div>
+              ))}
+            </div>
           )}
 
           {/* Register Form */}

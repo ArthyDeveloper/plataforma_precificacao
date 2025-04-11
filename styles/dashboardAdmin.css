@@ -1,3 +1,28 @@
+/* Page Globals */
+.centerDiv{ @apply
+  left-1/2
+  top-1/2
+  transform -translate-x-1/2 -translate-y-1/2
+}
+
+/* Users Panel */
+.usersDiv{ @apply
+  relative
+  w-[300px]
+  h-[400px]
+  rounded-md
+  border border-s-amber-50;
+}
+
+.userBox{ @apply
+  relative
+  mt-1
+  rounded-md
+  w-full
+  h-[80px]
+  border border-s-amber-50
+}
+
 /* Admin Panels Buttons */
 .btnAdminSelector{ @apply
   font-bold
