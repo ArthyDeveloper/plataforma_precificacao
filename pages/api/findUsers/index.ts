@@ -14,29 +14,26 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
     const db = client.db("Database");
     const col = db.collection("Users");
 
-    const searchUser = await col.findOne({ name: user });
-
-    if (searchUser) {
+    const searchUser = await col.findOne({"name": user, "userType": "admin"});
+    if (searchUser){
       const passwordMatches = await bcrypt.compare(senha, searchUser.password);
 
-      if (passwordMatches) {
+      if (passwordMatches == true){
+        const searchDocuments = await col.find({userType: "client"}).toArray();
         return res.status(200).json({
           status: true,
-          userFound: true,
-          name: searchUser.name,
-          password: senha,
-          userType: searchUser.userType
+          searchDocuments
         });
       }
+    } else {
+      return res.status(204).json({
+        "status": true,
+        "foundDocuments": false
+      });
     }
-    
-    return res.status(200).json({
-      status: true,
-      userFound: false
-    });
-
   } catch (error) {
-    console.error("Erro no login:", error);
-    return res.status(500).json({ error: "Erro interno do servidor" });
+    console.error(error);
+    res.status(500).json({ error: "Fail" });
+    return;
   }
 }

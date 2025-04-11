@@ -9,7 +9,7 @@ const Dashboard_Admin = ({user}) => {
   const [admin, setAdmin] = useState("");
   const [adminPwd, setAdminPwd] = useState("");
   const [activePage, setActivePage] = useState("");
-  const [usersDocuments, setUsersDocuments] = useState("");
+  const [usersDocuments, setUsersDocuments] = useState([]);
 
   const mudarPágina = (página) => {
     setActivePage(página);
@@ -17,6 +17,35 @@ const Dashboard_Admin = ({user}) => {
 
   const buttonClasses = (página) => activePage === página ? "!bg-gray-900 text-white" : "!bg-gray-800";
 
+  const listUsers = async () => {
+    const url = "/api/findUsers";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ user: user.name, senha: user.password })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      if (data?.searchDocuments?.length) {
+        console.log(data)
+        setUsersDocuments(data.searchDocuments);
+      } else {
+        setUsersDocuments([]);
+      }
+
+    } catch (error) {
+      console.log("Erro:", error)
+    }
+  }
+
+  /*
   async function listUsers(admin, adminPwd){
     const url = `/api/findUsers/${admin}/${adminPwd}/client`;
     try {
@@ -34,11 +63,11 @@ const Dashboard_Admin = ({user}) => {
       setUsersDocuments([]);
     }
   }
-
+  */
   useEffect(() => {
-    {/* Trocar para aceitar login de admin após painel admin */}
-    listUsers("Admin", "123");
+    listUsers();
   }, []);
+  
 
   async function register(){
     console.log(admin, adminPwd, user, senha, email, telefone);

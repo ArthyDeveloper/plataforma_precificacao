@@ -5,21 +5,23 @@ import Dashboard_Client from "../components/Dashboard_Client";
 import Dashboard_Admin from "../components/Dashboard_Admin";
 
 export default function Home() {
-  //const [logado, setLogado] = useState(false);
-  //const [usuário, setUsuário] = useState<User | null>(null);
-  
-  //Temporário para trabalhar em UI's;
-  const logado = true; 
-  const usuário = {
-    name: "Dev",
-    userType: "admin",
-  };
-
   type User = {
     name: string;
+    password: string;
     userType: "admin" | "client";
   };
 
+  // Bypass Login;
+  const logado = true; 
+  const usuário = {
+    name: "Admin",
+    password: "123",
+    userType: "admin"
+  };
+
+  //const [logado, setLogado] = useState(false);
+  //const [usuário, setUsuário] = useState<User | null>(null);
+  
   const handleLoginSuccess = (data: User) => {
     setLogado(true);
     setUsuário(data);
