@@ -45,25 +45,6 @@ const Dashboard_Admin = ({user}) => {
     }
   }
 
-  /*
-  async function listUsers(admin, adminPwd){
-    const url = `/api/findUsers/${admin}/${adminPwd}/client`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      
-      if (data?.searchDocuments?.length) {
-        console.log(data)
-        setUsersDocuments(data.searchDocuments);
-      } else {
-        setUsersDocuments([]);
-      }
-    } catch (error) {
-      console.error("Error fetching users:", error);
-      setUsersDocuments([]);
-    }
-  }
-  */
   useEffect(() => {
     listUsers();
   }, []);
