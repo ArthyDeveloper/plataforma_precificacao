@@ -6,8 +6,8 @@ const Dashboard_Admin = ({user}) => {
   const [senha, setSenha] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
-  const [admin, setAdmin] = useState("");
-  const [adminPwd, setAdminPwd] = useState("");
+  //const [admin, setAdmin] = useState("");
+  //const [adminPwd, setAdminPwd] = useState("");
   const [activePage, setActivePage] = useState("");
   const [usersDocuments, setUsersDocuments] = useState([]);
 
@@ -49,24 +49,32 @@ const Dashboard_Admin = ({user}) => {
     listUsers();
   }, []);
   
-
-  async function register(){
-    console.log(admin, adminPwd, user, senha, email, telefone);
-
-    if(user == "" || senha == "" || email == "" || telefone == ""){
-      alert("Há campos vazios!")
-    } else {
-      const url = `/api/register/${admin}/${adminPwd}/${user}/${senha}/${email}/${telefone}`;
-      fetch(url,{
-        method: "POST"
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+  const register = async () => {
+    const url = "/api/register"
+    try{
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+         "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          user: user.name,
+          password: user.password,
+          name: usuário,
+          senha: senha,
+          email: email,
+          telefone: telefone
         })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log("Erro", error);
     }
   }
 
@@ -113,9 +121,7 @@ const Dashboard_Admin = ({user}) => {
               <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>
-              <input value={admin} onChange={(e) => setAdmin(e.target.value)} className="adminInput" placeholder="Admin"/>
-              <input value={adminPwd} type="password" onChange={(e) => setAdminPwd(e.target.value)} className="adminInput" placeholder="AdminPwd"/>
-              <button onClick={register} className="adminRegisterBtn">Registrar</button>
+              <button onClick={() => register()} className="adminRegisterBtn">Registrar</button>
             </div>
           )}
 
@@ -126,8 +132,6 @@ const Dashboard_Admin = ({user}) => {
               <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>
-              <input value={admin} onChange={(e) => setAdmin(e.target.value)} className="adminInput" placeholder="Admin"/>
-              <input value={adminPwd} type="password" onChange={(e) => setAdminPwd(e.target.value)} className="adminInput" placeholder="AdminPwd"/>
               <button onClick={update} className="adminRegisterBtn">Update</button>
             </div>
           )}
