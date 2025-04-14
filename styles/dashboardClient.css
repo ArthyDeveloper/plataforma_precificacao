@@ -1,0 +1,82 @@
+/* Page Globals */
+.centerDiv{ @apply
+  left-1/2
+  top-1/2
+  transform -translate-x-1/2 -translate-y-1/2
+}
+
+/* Main Div */
+.dashboardContentDiv{ @apply
+  absolute
+  h-full
+  w-full
+  flex
+  border border-red-500
+}
+
+/* Files Header */
+.filesDiv{ @apply
+  flex-col
+  relative
+  w-[300px]
+  h-fit
+  pb-5
+  rounded-md
+  bg-slate-700
+}
+
+.filesHeaderDiv{ @apply
+  relative
+  w-full
+  h-24
+  flex
+  items-center
+  justify-around
+}
+
+.filesH1{ @apply
+  text-[25px]
+  font-bold
+}
+
+.selectorsDiv{ @apply
+  flex-col
+  relative
+  w-fit
+  h-auto
+}
+
+.selectorInput{ @apply
+  relative
+  flex
+  w-[100px]
+  h-[30px]
+}
+
+/* Files Archives */
+.filesBox{ @apply
+  flex
+  flex-col
+  space-y-1
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  w-[90%]
+  h-fit
+}
+
+.file{ @apply
+  rounded-md
+  w-full
+  h-16
+  bg-slate-200
+}
+
+/* Footer Bar */
+.footer{ @apply
+  absolute
+  bottom-0
+  w-full
+  h-[20px]
+  bg-slate-200
+}
