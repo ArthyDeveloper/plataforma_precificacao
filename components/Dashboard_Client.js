@@ -93,7 +93,7 @@ const Dashboard_Client = ({user}) => {
               <select className="selectorInput" name="ano">
                 <option value="2025">2025</option>
               </select>
-              <select className="selectorInput" name="mês">
+              <select className="selectorInput ml-1 !w-[80px]" name="mês">
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
                 <option value="março">Março</option>
@@ -112,11 +112,26 @@ const Dashboard_Client = ({user}) => {
 
           {/* Arquivos. */}
           <div className="filesBox">
-            <div className="file">dasd</div>
-            <div className="file">sadas</div>
-            <div className="file">dasd</div>
-            <div className="file">dasd</div>
-            <div className="file">dsad</div>
+            <div className="file">
+              <h1 className="fileName">01.01 - 14.01</h1>
+              <div className="downloadBtn"></div>
+            </div>
+            <div className="file">
+              <h1 className="fileName">01.01 - 14.01</h1>
+              <div className="downloadBtn"></div>
+            </div>
+            <div className="file">
+              <h1 className="fileName">01.01 - 14.01</h1>
+              <div className="downloadBtn"></div>
+            </div>
+            <div className="file">
+              <h1 className="fileName">01.01 - 14.01</h1>
+              <div className="downloadBtn"></div>
+            </div>
+            <div className="file">
+              <h1 className="fileName">01.01 - 14.01</h1>
+              <div className="downloadBtn"></div>
+            </div>
           </div>
         </div>
 
