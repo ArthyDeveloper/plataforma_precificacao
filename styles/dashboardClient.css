@@ -8,18 +8,21 @@
 /* Main Div */
 .dashboardContentDiv{ @apply
   absolute
-  h-full
-  w-full
+  h-[90%]
+  w-[75%]
+  max-w-[1000px]
   flex
-  border border-red-500
+  justify-between
+  items-center
+  border border-s-amber-200
 }
 
-/* Files Header */
+/* Header de Arquivos */
 .filesDiv{ @apply
   flex-col
   relative
-  w-[300px]
-  h-fit
+  w-[240px]
+  h-[400px]
   pb-5
   rounded-md
   bg-slate-700
@@ -31,19 +34,22 @@
   h-24
   flex
   items-center
-  justify-around
+  justify-evenly
 }
 
 .filesH1{ @apply
-  text-[25px]
+  text-white
+  text-[20px]
   font-bold
 }
 
+/* Seletores */
 .selectorsDiv{ @apply
   flex-col
   relative
   w-fit
   h-auto
+  text-[12px]
 }
 
 .selectorInput{ @apply
@@ -53,23 +59,55 @@
   h-[30px]
 }
 
-/* Files Archives */
-.filesBox{ @apply
-  flex
-  flex-col
+/* Divs Arquivos */
+.filesBox { @apply
   space-y-1
   relative
   left-1/2
   transform -translate-x-1/2
   w-[90%]
-  h-fit
+  h-[77%]
+  overflow-y-auto
 }
 
-.file{ @apply
+/* Individual file items */
+.file { @apply
   rounded-md
-  w-full
-  h-16
-  bg-slate-200
+  h-[70px]
+  bg-slate-200;
+}
+
+/* Custom Scrollbar Style */
+.filesBox::-webkit-scrollbar { @apply
+  w-[5px]
+}
+
+.filesBox::-webkit-scrollbar-thumb { @apply
+  bg-white
+  rounded-sm
+}
+
+.filesBox::-webkit-scrollbar-thumb:hover { @apply
+  bg-slate-800
+}
+
+.filesBox::-webkit-scrollbar-track { @apply
+  bg-slate-950
+  rounded-sm
+}
+
+/* Gráfico */
+.graficoDiv{ @apply
+  rounded-md
+  bg-slate-700
+}
+
+.grafico{ @apply
+  rounded-md
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  text-white
 }
 
 /* Footer Bar */
@@ -79,4 +117,5 @@
   w-full
   h-[20px]
   bg-slate-200
+  invisible
 }

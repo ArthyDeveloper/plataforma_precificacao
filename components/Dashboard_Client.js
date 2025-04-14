@@ -1,6 +1,86 @@
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { useState } from "react";
 import "../styles/dashboardClient.css";
 
 const Dashboard_Client = ({user}) => {
+  
+  ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
+  const [chartData, setChartData] = useState({
+    labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5'],
+    datasets: [
+      {
+        label: 'Ganhando',
+        data: [65, 59, 80, 81, 56],
+        borderColor: 'rgb(75, 192, 192)',
+        backgroundColor: 'rgba(75, 192, 192, 0.3)',
+        borderWidth: 1,
+      },
+      {
+        label: 'Perdendo',
+        data: [65, 59, 80, 81, 56],
+        borderColor: 'rgb(75, 192, 192)',
+        backgroundColor: 'rgba(153, 102, 255, 0.3)',
+        borderWidth: 1,
+      },
+    ],
+  });
+
+  const options = {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Resumo Mensal',
+        color: 'white',
+        font: {
+          size: 20,
+          family: 'Arial',
+          weight: 'bold',
+        },
+      },
+      legend: {
+        position: 'bottom',
+        labels: {
+          color: 'white',
+        },
+      },
+      tooltip: {
+        enabled: true,
+        titleColor: 'white',
+        bodyColor: 'white',
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: 'white',
+        },
+      },
+      y: {
+        ticks: {
+          color: 'white',
+        },
+      },
+    },
+  };
+
+  const updateChart = () => {
+    // Update the chart's data dynamically (e.g., modify values or labels)
+    setChartData({
+      labels: ['August', 'September', 'October', 'November', 'December'],
+      datasets: [
+        {
+          label: 'Updated Dataset',
+          data: [35, 49, 60, 71, 80],
+          borderColor: 'rgb(153, 102, 255)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          fill: true,
+        },
+      ],
+    });
+  };
+
   return(
     <div className="absolute top-0 left-0 w-full h-full bg-gray-900 overflow-x-hidden">
       <div className="dashboardContentDiv centerDiv">
@@ -32,12 +112,17 @@ const Dashboard_Client = ({user}) => {
 
           {/* Arquivos. */}
           <div className="filesBox">
-            <div className="file"></div>
-            <div className="file"></div>
-            <div className="file"></div>
-            <div className="file"></div>
-            <div className="file"></div>
+            <div className="file">dasd</div>
+            <div className="file">sadas</div>
+            <div className="file">dasd</div>
+            <div className="file">dasd</div>
+            <div className="file">dsad</div>
           </div>
+        </div>
+
+        {/* Gráfico */}
+        <div className="graficoDiv">
+          <Bar data={chartData} options={options} className="grafico" />
         </div>
       </div>
       <footer className="footer"></footer>
