@@ -2,14 +2,21 @@ import React, {useState, useEffect} from "react";
 import "../styles/dashboardAdmin.css";
 
 const Dashboard_Admin = ({user}) => {
+  // Register;
   const [usuário, setUser] = useState("");
   const [senha, setSenha] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
-  //const [admin, setAdmin] = useState("");
-  //const [adminPwd, setAdminPwd] = useState("");
-  const [activePage, setActivePage] = useState("");
+
+  // Update Field;
+  const [updateField, setUpdateField] = useState("");
+  const [updateData, setUpdateData] = useState("");
+
+  // Display clientes;
   const [usersDocuments, setUsersDocuments] = useState([]);
+
+  // Mudança de menus;
+  const [activePage, setActivePage] = useState("Update");
 
   const mudarPágina = (página) => {
     setActivePage(página);
@@ -78,8 +85,32 @@ const Dashboard_Admin = ({user}) => {
     }
   }
 
-  async function update(){
-    alert("Update!");
+  const update = async () => {
+    const url = "/api/update"
+    try{
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+         "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          user: user.name,
+          password: user.password,
+          userName: usuário,
+          updateField: updateField,
+          updateData: updateData
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log("Erro", error);
+    }
   }
 
   return(
@@ -129,10 +160,9 @@ const Dashboard_Admin = ({user}) => {
           {activePage === "Update" && (
             <div className="adminInputDiv">
               <input value={usuário} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
-              <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
-              <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>
-              <button onClick={update} className="adminRegisterBtn">Update</button>
+              <input value={updateField} onChange={(e) => setUpdateField(e.target.value)} className="adminInput" placeholder="Field"/>
+              <input value={updateData} onChange={(e) => setUpdateData(e.target.value)} className="adminInput" placeholder="Data"/>
+              <button onClick={() => update()} className="adminRegisterBtn">Update</button>
             </div>
           )}
 

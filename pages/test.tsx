@@ -16,7 +16,7 @@ export default function Home() {
   const usuário = {
     name: "Admin",
     password: "123",
-    userType: "client"
+    userType: "admin"
   };
 
   //const [logado, setLogado] = useState(false);
