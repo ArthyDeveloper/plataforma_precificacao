@@ -47,7 +47,7 @@ const Dashboard_Admin = ({user}) => {
 
   useEffect(() => {
     listUsers();
-  }, []);
+  }, [user]);
   
   const register = async () => {
     const url = "/api/register"
