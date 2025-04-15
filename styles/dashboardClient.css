@@ -21,7 +21,7 @@
 .filesDiv{ @apply
   flex-col
   relative
-  w-[240px]
+  w-[200px]
   h-[380px]
   pb-5
   rounded-sm
@@ -132,7 +132,7 @@
 
 /* Gráfico */
 .graficoDiv{ @apply
-  w-[60%]
+  w-[65%]
   max-w-[500px]
   h-[380px]
   rounded-sm

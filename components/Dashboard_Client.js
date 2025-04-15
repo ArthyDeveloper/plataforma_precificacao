@@ -1,10 +1,35 @@
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/dashboardClient.css";
 
 const Dashboard_Client = ({user}) => {
+  const meses = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+  const anoAtual = new Date().getFullYear();
+  const mesAtual = meses[new Date().getMonth()];
+  const [ano, setAno] = useState(anoAtual);
+  const [mes, setMes] = useState(mesAtual);
   
+  const years = [];
+  for (let year = 2025; year <= 2030; year++) {
+    years.push(year);
+  }
+
+  const termosPesquisa = (e) => {
+    const {name, value} = e.target;
+
+    if (name === "ano"){
+      setAno(value);
+    } else if (name === "mês"){
+      console.log(value, typeof(value))
+      setMes(value);
+    }
+  }
+  useEffect(() => {
+    console.log(`Ano: ${ano} | Mês: ${mes} | Value: none`);
+  }, [ano, mes]);
+
+  // Gráfico
   ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
   const [chartData, setChartData] = useState({
     labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5'],
@@ -90,10 +115,14 @@ const Dashboard_Client = ({user}) => {
           <div className="filesHeaderDiv">
             <h1 className="filesH1">Relatórios</h1>
             <div className="selectorsDiv">
-              <select className="selectorInput" name="ano">
-                <option value="2025">2025</option>
+              <select className="selectorInput" name="ano" value={ano} onChange={termosPesquisa}>
+                {years.map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                ))}
               </select>
-              <select className="selectorInput ml-1 !w-[80px]" name="mês">
+              <select className="selectorInput ml-1 !w-[80px]" name="mês" value={mes} onChange={termosPesquisa}>
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
                 <option value="março">Março</option>
