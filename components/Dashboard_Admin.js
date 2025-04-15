@@ -9,6 +9,7 @@ const Dashboard_Admin = ({user}) => {
   const [telefone, setTelefone] = useState("");
 
   // Update Field;
+  const [updateOperation, setUpdateOperation] = useState("");
   const [updateField, setUpdateField] = useState("");
   const [updateData, setUpdateData] = useState("");
 
@@ -96,6 +97,7 @@ const Dashboard_Admin = ({user}) => {
         body: JSON.stringify({
           user: user.name,
           password: user.password,
+          updateOperation: updateOperation,
           userName: usuário,
           updateField: updateField,
           updateData: updateData
@@ -162,6 +164,7 @@ const Dashboard_Admin = ({user}) => {
               <input value={usuário} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
               <input value={updateField} onChange={(e) => setUpdateField(e.target.value)} className="adminInput" placeholder="Field"/>
               <input value={updateData} onChange={(e) => setUpdateData(e.target.value)} className="adminInput" placeholder="Data"/>
+              <input value={updateOperation} onChange={(e) => setUpdateOperation(e.target.value)} className="adminInput" placeholder="Operação(set, unset, rename)"/>
               <button onClick={() => update()} className="adminRegisterBtn">Update</button>
             </div>
           )}

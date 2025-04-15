@@ -6,7 +6,7 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const { user, password, userName, updateField, updateData } = req.body;
+  const { user, password, updateOperation, userName, updateField, updateData } = req.body;
   const bcrypt = require("bcryptjs");
 
   try{
@@ -20,15 +20,38 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
       if (passwordMatches == true){
         const searchDocument = await col.findOne({ "name": userName });
         if (searchDocument){
-          await col.updateOne({ "name": userName },
-            {
-              $set:{
-                [updateField]: updateData
-              }
-            });
+          switch(updateOperation){
+            case "set":
+              await col.updateOne({ "name": userName },
+                {
+                  $set:{
+                    [updateField]: updateData
+                  }
+                });
+                break;
+            
+            case "unset":
+              await col.updateOne({ "name": userName },
+                {
+                  $unset:{
+                    [updateField]: ""
+                  }
+                });
+                break;
+            
+            case "rename":
+              await col.updateOne({ "name": userName },
+                {
+                  $rename:{
+                    [updateField]: updateData
+                  }
+                });
+                break;
+          }
           
           return res.status(200).json({
-            "update": true
+            "update": true,
+            "operação": updateOperation
           });
         }
       }
