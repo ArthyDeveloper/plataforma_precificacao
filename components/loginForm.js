@@ -25,6 +25,7 @@ const LoginForm = ({onLoginSuccess}) => {
       if (data.userFound){
         onLoginSuccess({
           name: data.name,
+          password: senha,
           userType: data.userType
         });
       } else {
