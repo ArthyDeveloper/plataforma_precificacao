@@ -14,7 +14,7 @@ export default async function register(req:NextApiRequest, res:NextApiResponse){
     const db = client.db("Database");
     const col = db.collection("Users");
 
-    const searchUser = await col.findOne({ "name": user, "userType": "admin" })
+    const searchUser = await col.findOne({ "name": user, "userType": "admin" });
     if (searchUser){
       const passwordMatches = await bcrypt.compare(password, searchUser.password);
       if (passwordMatches == true){
