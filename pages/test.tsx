@@ -11,16 +11,16 @@ export default function Home() {
     userType: "admin" | "client";
   };
 
-  /* Bypass Login; */
+  /* Bypass Login; 
   const logado = true; 
   const usuário = {
     name: "Admin",
     password: "123",
     userType: "admin"
-  };
+  };*/
 
-  //const [logado, setLogado] = useState(false);
-  //const [usuário, setUsuário] = useState<User | null>(null);
+  const [logado, setLogado] = useState(false);
+  const [usuário, setUsuário] = useState<User | null>(null);
   
   const handleLoginSuccess = (data: User) => {
     setLogado(true);
@@ -38,7 +38,7 @@ export default function Home() {
   };
 
   return (
-    <main className="absolute top-0 left-0 overflow-x-hidden w-full h-full bg-gray-800">
+    <main className="absolute top-0 left-0 overflow-x-hidden w-full h-full bg-neutral-950">
       {!logado ? (
         <LoginForm onLoginSuccess={handleLoginSuccess} />
       ) : (

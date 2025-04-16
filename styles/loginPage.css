@@ -1,0 +1,80 @@
+/* Page Globals */
+.centerDiv{ @apply
+  left-1/2
+  top-1/2
+  transform -translate-x-1/2 -translate-y-1/2
+}
+
+/* Login Panel */
+.panel{ @apply
+  absolute
+  rounded-sm
+  text-center
+  w-[250px]
+  h-[350px]
+  border
+  border-neutral-700
+  bg-neutral-950
+}
+
+.loginBox{ @apply
+  absolute
+  w-fit
+  h-fit
+}
+
+.loginH1{ @apply
+  text-3xl
+  mb-5
+  font-semibold
+  text-white
+}
+
+/* Inputs */
+.inputDiv{ @apply
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  w-fit
+  h-auto
+}
+
+.inputH2{ @apply
+  relative
+  text-[14px]
+  left-[0px]
+  w-fit
+  ml-0
+  text-white
+}
+
+.input{ @apply
+  rounded-sm
+  text-sm
+  pl-[5px]
+  pr-[5px]
+  h-[30px]
+  w-[180px]
+  outline-none
+  text-white
+  bg-neutral-950
+  border
+  border-neutral-700
+  hover:border-neutral-500
+  focus:border-neutral-500
+}
+
+/* Login Button */
+.loginBtn{ @apply
+  relative
+  pb-1
+  rounded-sm
+  w-[180px]
+  h-[30px]
+  mt-5
+  text-[12px]
+  duration-150
+  ease-out
+  bg-white
+  hover:bg-neutral-300
+}

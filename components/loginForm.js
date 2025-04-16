@@ -1,5 +1,6 @@
 "use server"
 import React, { useState } from "react";
+import "../styles/loginPage.css";
 
 const LoginForm = ({onLoginSuccess}) => {
   const [user, setUser] = useState("");
@@ -29,7 +30,7 @@ const LoginForm = ({onLoginSuccess}) => {
           userType: data.userType
         });
       } else {
-        alert("Usuário(a) ou senha incorreto.")
+        alert("Usuário(a) ou senha incorretos.")
       }
     } catch (error) {
       console.error("Erro:", error);
@@ -37,18 +38,18 @@ const LoginForm = ({onLoginSuccess}) => {
   }
 
   return (
-    <div className="absolute rounded-sm text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[250px] h-[350px] bg-white" >
-      <div className="absolute w-fit h-fit left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <h1 className="text-3xl">Login</h1>
-        <div className="relative mt-[30px] mb-[20px] w-fit h-auto left-1/2 transform -translate-x-1/2">
-          <h2 className="absolute w-[65px] top-[-15px] left-[10px] bg-white">Usuário</h2>
-          <input type="text" value={user} onChange={(e) => setUser(e.target.value)} className="rounded-xl text-sm pl-[10px] pr-[10px] border-gray border-2 h-[40px] w-[180px]"></input>
+    <div className="centerDiv panel">
+      <div className="centerDiv loginBox">
+        <h1 className="loginH1">Login</h1>
+        <div className="inputDiv mb-2">
+          <h2 className="inputH2">Usuário</h2>
+          <input type="text" value={user} onChange={(e) => setUser(e.target.value)} className="input"></input>
         </div>
-        <div className="relative w-fit h-auto left-1/2 transform -translate-x-1/2">
-          <h2 className="absolute w-[55px] top-[-15px] left-[10px] bg-white">Senha</h2>
-          <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} className="rounded-xl text-sm pl-[10px] pr-[10px] border-gray border-2 h-[40px] w-[180px]"></input>
+        <div className="inputDiv">
+          <h2 className="inputH2">Senha</h2>
+          <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} className="input"></input>
         </div>
-        <button onClick={() => login(user, senha)} className="relative pb-1 rounded-xl w-[80px] h-[35px] mt-[20px] bg-blue-400 hover:bg-blue-500">Entrar</button>
+        <button onClick={() => login(user, senha)} className="loginBtn">Entrar</button>
       </div>
     </div>
   );
