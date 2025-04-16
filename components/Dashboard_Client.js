@@ -1,6 +1,5 @@
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { useState, useEffect } from "react";
+import Grafico from "./Grafico";
 import "../styles/dashboardClient.css";
 
 const Dashboard_Client = ({user}) => {
@@ -30,81 +29,71 @@ const Dashboard_Client = ({user}) => {
   }, [ano, mes]);
 
   // Gráfico
-  ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
-  const [chartData, setChartData] = useState({
-    labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5'],
-    datasets: [
-      {
-        label: 'Ganhando',
-        data: [65, 59, 80, 81, 56],
-        borderColor: 'rgb(75, 192, 192)',
-        backgroundColor: 'rgba(75, 192, 192, 0.3)',
-        borderWidth: 1,
-      },
-      {
-        label: 'Perdendo',
-        data: [65, 59, 80, 81, 56],
-        borderColor: 'rgb(75, 192, 192)',
-        backgroundColor: 'rgba(153, 102, 255, 0.3)',
-        borderWidth: 1,
-      },
-    ],
-  });
-
-  const options = {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Resumo Mensal',
-        color: 'white',
-        font: {
-          size: 20,
-          family: 'Arial',
-          weight: 'bold',
-        },
-      },
-      legend: {
-        position: 'bottom',
-        labels: {
-          color: 'white',
-        },
-      },
-      tooltip: {
-        enabled: true,
-        titleColor: 'white',
-        bodyColor: 'white',
-      },
+  const [datasetGrafico, setDataset] = useState([
+    {
+      name: 'Semana 1',
+      Ganhando: 2400,
+      Perdendo: 4000,
+      amt: 2400,
     },
-    scales: {
-      x: {
-        ticks: {
-          color: 'white',
-        },
-      },
-      y: {
-        ticks: {
-          color: 'white',
-        },
-      },
+    {
+      name: 'Semana 2',
+      Ganhando: 1398,
+      Perdendo: 3000,
+      amt: 2210,
     },
-  };
+    {
+      name: 'Semana 3',
+      Ganhando: 3800,
+      Perdendo: 2000,
+      amt: 2290,
+    },
+    {
+      name: 'Semana 4',
+      Ganhando: 1500,
+      Perdendo: 2100,
+      amt: 2290,
+    },
+    ]);
 
-  const updateChart = () => {
-    // Update the chart's data dynamically (e.g., modify values or labels)
-    setChartData({
-      labels: ['August', 'September', 'October', 'November', 'December'],
-      datasets: [
+    useEffect(() => {
+      setDataset(
+      {
+        name: 'Semana 1',
+        Ganhando: 2400,
+        Perdendo: 4000,
+        amt: 2400,
+      },
+      {
+        name: 'Semana 2',
+        Ganhando: 1398,
+        Perdendo: 3000,
+        amt: 2210,
+      },
+      {
+        name: 'Semana 3',
+        Ganhando: 3800,
+        Perdendo: 2000,
+        amt: 2290,
+      },
+      {
+        name: 'Semana 4',
+        Ganhando: 1500,
+        Perdendo: 2100,
+        amt: 2290,
+      },
+    )}, [datasetGrafico]);
+
+    const updateDataset = () => {
+      setDataset([
         {
-          label: 'Updated Dataset',
-          data: [35, 49, 60, 71, 80],
-          borderColor: 'rgb(153, 102, 255)',
-          backgroundColor: 'rgba(153, 102, 255, 0.2)',
-          fill: true,
+          name: 'Semana 4',
+          Ganhando: 1500,
+          Perdendo: 2100,
+          amt: 2290,
         },
-      ],
-    });
-  };
+      ])
+    }
 
   return(
     <div className="absolute top-0 left-0 w-full h-full bg-neutral-950 overflow-x-hidden">
@@ -144,8 +133,8 @@ const Dashboard_Client = ({user}) => {
             <div className="file">
               <h1 className="fileName">01.01 - 14.01</h1>
               <button className="downloadBtn">
-                <svg className="downloadSvg centerDiv" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                <svg className="downloadSvg centerDiv size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
               </button>
             </div>
@@ -154,7 +143,7 @@ const Dashboard_Client = ({user}) => {
 
         {/* Gráfico */}
         <div className="graficoDiv">
-          <Bar data={chartData} options={options} className="grafico" />
+          <Grafico data={datasetGrafico} />
         </div>
       </div>
       <footer className="footer"></footer>
