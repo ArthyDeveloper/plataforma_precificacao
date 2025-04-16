@@ -107,7 +107,7 @@ const Dashboard_Client = ({user}) => {
   };
 
   return(
-    <div className="absolute top-0 left-0 w-full h-full bg-gray-900 overflow-x-hidden">
+    <div className="absolute top-0 left-0 w-full h-full bg-neutral-950 overflow-x-hidden">
       <div className="dashboardContentDiv centerDiv">
         {/* Painel de arquivos. */}
         <div className="filesDiv">
@@ -143,23 +143,11 @@ const Dashboard_Client = ({user}) => {
           <div className="filesBox">
             <div className="file">
               <h1 className="fileName">01.01 - 14.01</h1>
-              <div className="downloadBtn"></div>
-            </div>
-            <div className="file">
-              <h1 className="fileName">01.01 - 14.01</h1>
-              <div className="downloadBtn"></div>
-            </div>
-            <div className="file">
-              <h1 className="fileName">01.01 - 14.01</h1>
-              <div className="downloadBtn"></div>
-            </div>
-            <div className="file">
-              <h1 className="fileName">01.01 - 14.01</h1>
-              <div className="downloadBtn"></div>
-            </div>
-            <div className="file">
-              <h1 className="fileName">01.01 - 14.01</h1>
-              <div className="downloadBtn"></div>
+              <button className="downloadBtn">
+                <svg className="downloadSvg centerDiv" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
