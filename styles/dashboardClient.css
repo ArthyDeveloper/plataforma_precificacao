@@ -166,14 +166,11 @@ option{ @apply
   p-[15px]
 }
 
-.grafico{ @apply
-  rounded-sm
+.graficoDiv2{ @apply
   relative
-  top-1/2
-  left-1/2
-  transform -translate-x-1/2 -translate-y-1/2
+  w-[100%]
+  h-[100%]
   text-white
-  !hidden
 }
 
 /* Footer Bar */
