@@ -30,70 +30,21 @@ const Dashboard_Client = ({user}) => {
 
   // Gráfico
   const [datasetGrafico, setDataset] = useState([
-    {
-      name: 'Semana 1',
-      Ganhando: 2400,
-      Perdendo: 4000,
-      amt: 2400,
-    },
-    {
-      name: 'Semana 2',
-      Ganhando: 1398,
-      Perdendo: 3000,
-      amt: 2210,
-    },
-    {
-      name: 'Semana 3',
-      Ganhando: 3800,
-      Perdendo: 2000,
-      amt: 2290,
-    },
-    {
-      name: 'Semana 4',
-      Ganhando: 1500,
-      Perdendo: 2100,
-      amt: 2290,
-    },
-    ]);
+    { name: 'Semana 1', Ganhando: 2400, Perdendo: 4000 },
+    { name: 'Semana 2', Ganhando: 1398, Perdendo: 3000 },
+    { name: 'Semana 3', Ganhando: 3800, Perdendo: 2000 },
+    { name: 'Semana 4', Ganhando: 1500, Perdendo: 2100 },
+  ]);w
 
-    useEffect(() => {
-      setDataset(
-      {
-        name: 'Semana 1',
-        Ganhando: 2400,
-        Perdendo: 4000,
-        amt: 2400,
-      },
-      {
-        name: 'Semana 2',
-        Ganhando: 1398,
-        Perdendo: 3000,
-        amt: 2210,
-      },
-      {
-        name: 'Semana 3',
-        Ganhando: 3800,
-        Perdendo: 2000,
-        amt: 2290,
-      },
+  const updateDataset = () => {
+    setDataset([
       {
         name: 'Semana 4',
         Ganhando: 1500,
         Perdendo: 2100,
-        amt: 2290,
       },
-    )}, [datasetGrafico]);
-
-    const updateDataset = () => {
-      setDataset([
-        {
-          name: 'Semana 4',
-          Ganhando: 1500,
-          Perdendo: 2100,
-          amt: 2290,
-        },
-      ])
-    }
+    ])
+  }
 
   return(
     <div className="absolute top-0 left-0 w-full h-full bg-neutral-950 overflow-x-hidden">
@@ -143,7 +94,7 @@ const Dashboard_Client = ({user}) => {
 
         {/* Gráfico */}
         <div className="graficoDiv">
-          <Grafico data={datasetGrafico} />
+          <Grafico datasetGrafico={datasetGrafico} />
         </div>
       </div>
       <footer className="footer"></footer>

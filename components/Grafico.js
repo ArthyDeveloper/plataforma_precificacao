@@ -1,4 +1,3 @@
-import React, { PureComponent } from 'react';
 import { LineChart, Line, BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const Grafico = ({datasetGrafico}) => {
@@ -8,7 +7,7 @@ const Grafico = ({datasetGrafico}) => {
       <LineChart
         width={500}
         height={300}
-        data={datasetGrafico} // TODO: mudar para dataset recebido do dashboard / api
+        data={datasetGrafico}
         margin={{
           top: 5,
           right: 30,
@@ -20,9 +19,13 @@ const Grafico = ({datasetGrafico}) => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Legend />
-        <Line dataKey="Ganhando" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-        <Line dataKey="Perdendo" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+        <Legend wrapperStyle={{color: "white"}} />
+        {/* Bar Graph
+          <Bar dataKey="Ganhando" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+          <Bar dataKey="Perdendo" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+        */}
+        <Line type="monotone" dataKey="Ganhando" stroke="#ff7300" />
+        <Line type="monotone" dataKey="Perdendo" stroke="#00c49f" />
       </LineChart>
   </ResponsiveContainer>
   );
