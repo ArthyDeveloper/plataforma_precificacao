@@ -68,8 +68,10 @@ const Dashboard_Client = ({user}) => {
 
           {/* Div Arquivos e Gráfico */}
           <div className="containerArquivosGrafico">
+
             {/* Painel de arquivos. */}
             <div className="filesDiv hoverEffect">
+
               {/* Header e opções. */}
               <div className="filesHeaderDiv">
                 <h1 className="filesH1">Relatórios</h1>
