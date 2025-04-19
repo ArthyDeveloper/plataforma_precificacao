@@ -15,14 +15,60 @@
 .dashboardContentDiv{ @apply
   absolute
   h-[90%]
+  min-h-[500px]
   w-[650px]
   max-w-[1000px]
-  flex
-  justify-evenly
+  flex-row
   items-center
   rounded-md
   border
   border-neutral-700
+}
+
+.dashboardContainer{ @apply
+  flex-row
+  relative
+  w-[100%]
+  h-fit
+}
+
+/* Seletores de Painéis */
+.seletoresPaineisDiv{ @apply
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  flex
+  flex-row
+  mb-5
+  w-[75%]
+  h-14
+  justify-evenly
+  text-center
+  items-center
+  rounded-md
+  border border-neutral-700
+  bg-neutral-950
+}
+
+.seletorPaineisBtn{ @apply
+  text-white
+  text-[13px]
+  w-[120px]
+  h-[35px]
+  rounded-md
+  border border-neutral-700
+  bg-neutral-950
+}
+
+/* Painel Arquivos + Gráfico */
+.containerArquivosGrafico{ @apply
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  justify-evenly
+  flex
+  w-full
+  h-fit
 }
 
 /* Header de Arquivos */
@@ -180,14 +226,4 @@ option{ @apply
   w-[100%]
   h-[100%]
   text-white
-}
-
-/* Footer Bar */
-.footer{ @apply
-  absolute
-  bottom-0
-  w-full
-  h-[20px]
-  bg-slate-200
-  invisible
 }
