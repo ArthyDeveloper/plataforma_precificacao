@@ -12,7 +12,7 @@
 }
 
 /* Main Div */
-.dashboardContentDiv{ @apply
+.clientContentDiv{ @apply
   absolute
   h-[90%]
   min-h-[500px]
