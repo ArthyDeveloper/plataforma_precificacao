@@ -1,0 +1,18 @@
+/* Gráfico */
+.graficoDiv{ @apply
+  w-[65%]
+  max-w-[500px]
+  h-[380px]
+  rounded-md
+  border
+  border-neutral-700
+  bg-neutral-950
+  p-[15px]
+}
+
+.graficoDiv2{ @apply
+  relative
+  w-[100%]
+  h-[100%]
+  text-white
+}
