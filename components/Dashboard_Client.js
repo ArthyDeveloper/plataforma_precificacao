@@ -61,6 +61,17 @@ const Dashboard_Client = ({user}) => {
     ]);
   }
 
+  // Botões com as páginas;
+  const PagesButtons = ({mudarPágina, buttonClasses}) => {
+    return(
+      <div className="seletoresPaineisDiv hoverEffect">
+        <button onClick={() => mudarPágina("Validade")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Validade")}`}>Validade</button>
+        <button onClick={() => mudarPágina("Dashboard")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Dashboard")}`}>Dashboard</button>
+        <button onClick={() => mudarPágina("Contato")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Contato")}`}>Contato</button>
+      </div>
+    );
+  };
+
   return(
     <div className="absolute top-0 left-0 w-full h-full bg-neutral-950 overflow-x-hidden">
       <div className="clientContentDiv centerDiv">
@@ -68,30 +79,16 @@ const Dashboard_Client = ({user}) => {
         {/* Validade */}
         {activePage === "Validade" && (
           <div className="dashboardContainer centerDiv">
-
-            <div className="seletoresPaineisDiv hoverEffect">
-              <button onClick={() => mudarPágina("Validade")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Validade")}`}>Validade</button>
-              <button onClick={() => mudarPágina("Dashboard")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Dashboard")}`}>Dashboard</button>
-              <button onClick={() => mudarPágina("Contato")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Contato")}`}>Contato</button>
-            </div>
-            
+            <PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />
           </div>
         )}
 
         {/* Dashbaord */}
         {activePage === "Dashboard" && (
           <div className="dashboardContainer centerDiv">
-
-            <div className="seletoresPaineisDiv hoverEffect">
-              <button onClick={() => mudarPágina("Validade")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Validade")}`}>Validade</button>
-              <button onClick={() => mudarPágina("Dashboard")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Dashboard")}`}>Dashboard</button>
-              <button onClick={() => mudarPágina("Contato")} className={`seletorPaineisBtn hoverEffect ${buttonClasses("Contato")}`}>Contato</button>
-            </div>
-
+            <PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />
             <div className="containerArquivosGrafico">
-
               <div className="filesDiv hoverEffect">
-
                 <div className="filesHeaderDiv">
                   <h1 className="filesH1">Relatórios</h1>
                   <div className="selectorsDiv">
@@ -137,6 +134,13 @@ const Dashboard_Client = ({user}) => {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Contato */}
+        {activePage === "Contato" && (
+          <div className="dashboardContainer centerDiv">
+            <PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />
           </div>
         )}
       </div>
