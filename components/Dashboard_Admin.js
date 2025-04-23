@@ -33,7 +33,10 @@ const Dashboard_Admin = ({user}) => {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ user: user.name, senha: user.password })
+        body: JSON.stringify({
+          user: user.name,
+          senha: user.password
+        })
       });
 
       if (!response.ok) {
@@ -45,6 +48,7 @@ const Dashboard_Admin = ({user}) => {
         console.log(data)
         setUsersDocuments(data.searchDocuments);
       } else {
+        console.log(data)
         setUsersDocuments([]);
       }
 
@@ -139,9 +143,9 @@ const Dashboard_Admin = ({user}) => {
             <div className="centerDiv usersDiv">
               {usersDocuments.map((user, index) => (
                 <div className={`userBox ${index === 0 ? "!mt-0" : ""}`} key={index}>
-                  <h3 className="font-semibold">{user.name}</h3>
-                  <p>{`Email: ${user.email}`}</p>
-                  <p>{`Telefone: ${user.number}`}</p>
+                  <h3 className="font-semibold">{user.user.name}</h3>
+                  <p>{`Email: ${user.user.email}`}</p>
+                  <p>{`Telefone: ${user.user.number}`}</p>
                 </div>
               ))}
             </div>
