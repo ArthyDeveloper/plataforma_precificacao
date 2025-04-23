@@ -14,15 +14,15 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
     const db = client.db("Database");
     const col = db.collection("Users");
 
-    const searchUser = await col.findOne({ "name": user, "userType": "admin" });
+    const searchUser = await col.findOne({ "user.name": user, "user.userType": "admin" });
     if (searchUser){
-      const passwordMatches = await bcrypt.compare(password, searchUser.password);
+      const passwordMatches = await bcrypt.compare(password, searchUser.user.password);
       if (passwordMatches == true){
         const searchDocument = await col.findOne({ "user.name": userName });
         if (searchDocument){
           switch(updateOperation){
             case "set":
-              await col.updateOne({ "name": userName },
+              await col.updateOne({ "user.name": userName },
                 {
                   $set:{
                     [updateField]: updateData
@@ -31,7 +31,7 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
                 break;
             
             case "unset":
-              await col.updateOne({ "name": userName },
+              await col.updateOne({ "user.name": userName },
                 {
                   $unset:{
                     [updateField]: ""
@@ -40,7 +40,7 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
                 break;
             
             case "rename":
-              await col.updateOne({ "name": userName },
+              await col.updateOne({ "user.name": userName },
                 {
                   $rename:{
                     [updateField]: updateData
@@ -54,6 +54,83 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
                   $set:{
                     [`user_DB.resumes.${updateData}`]: {
                       "janeiro": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "fevereiro": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "março": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "abril": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "maio": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "junho": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "julho": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "agosto": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "setembro": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "outubro": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "novembro": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      },
+                      "dezembro": {
                         "1": [true, "Período", "LinkArquivo", 0, 0],
                         "2": [true, "Período", "LinkArquivo", 0, 0],
                         "3": [true, "Período", "LinkArquivo", 0, 0],

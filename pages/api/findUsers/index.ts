@@ -14,21 +14,22 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
     const db = client.db("Database");
     const col = db.collection("Users");
 
-    const searchUser = await col.findOne({"name": user, "userType": "admin"});
+    const searchUser = await col.findOne({"user.name": user, "user.userType": "admin"});
     if (searchUser){
-      const passwordMatches = await bcrypt.compare(senha, searchUser.password);
+      const passwordMatches = await bcrypt.compare(senha, searchUser.user.password);
 
       if (passwordMatches == true){
-        const searchDocuments = await col.find({userType: "client"}).toArray();
+        const searchDocuments = await col.find({ "user.userType": "client" }).toArray();
         return res.status(200).json({
           status: true,
           searchDocuments
         });
       }
     } else {
-      return res.status(204).json({
+      return res.status(200).json({
         "status": true,
-        "foundDocuments": false
+        "foundDocuments": false,
+        user, senha
       });
     }
   } catch (error) {
