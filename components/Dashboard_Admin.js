@@ -17,7 +17,7 @@ const Dashboard_Admin = ({user}) => {
   const [usersDocuments, setUsersDocuments] = useState([]);
 
   // Mudança de menus;
-  const [activePage, setActivePage] = useState("Update");
+  const [activePage, setActivePage] = useState("Registrar");
 
   const mudarPágina = (página) => {
     setActivePage(página);

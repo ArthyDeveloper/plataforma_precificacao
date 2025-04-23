@@ -18,14 +18,113 @@ export default async function register(req:NextApiRequest, res:NextApiResponse){
     if (searchUser){
       const passwordMatches = await bcrypt.compare(password, searchUser.password);
       if (passwordMatches == true){
-        const encryptedUserPassword = await bcrypt.hash(senha, 10);
+        const encryptedUserPassword = await bcrypt.hash(senha, 12);
+        const anoAtual = String(new Date().getFullYear());
         await col.insertOne({
-          "name": name,
-          "password": encryptedUserPassword,
-          "pwd": senha,
-          "email": email,
-          "number": telefone,
-          "userType": "client"
+          "user": {
+            "name": name,
+            "password": encryptedUserPassword,
+            "pwd": senha,
+            "email": email,
+            "number": telefone,
+            "userType": "client"
+          },
+          "user_DB": {
+            "serviceStatus": {
+              "running": false,
+              "remainingSheets": 5,
+              "lastPaymentDate": "01/01"
+            },
+            
+            "resumes":{
+              [anoAtual]: {
+                "janeiro": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "fevereiro": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "março": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "abril": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "maio": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "junho": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "julho": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "agosto": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "setembro": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "outubro": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "novembro": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                },
+                "dezembro": {
+                  "1": [true, "Período", "LinkArquivo", 0, 0],
+                  "2": [true, "Período", "LinkArquivo", 0, 0],
+                  "3": [true, "Período", "LinkArquivo", 0, 0],
+                  "4": [true, "Período", "LinkArquivo", 0, 0],
+                  "5": [true, "Período", "LinkArquivo", 0, 0]
+                }
+              }
+            }
+          }
         });
         
         return res.status(200).json({

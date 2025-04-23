@@ -18,7 +18,7 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
     if (searchUser){
       const passwordMatches = await bcrypt.compare(password, searchUser.password);
       if (passwordMatches == true){
-        const searchDocument = await col.findOne({ "name": userName });
+        const searchDocument = await col.findOne({ "user.name": userName });
         if (searchDocument){
           switch(updateOperation){
             case "set":
@@ -47,6 +47,29 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
                   }
                 });
                 break;
+            
+            case "addyear":
+              await col.updateOne({ "user.name": userName },
+                {
+                  $set:{
+                    [`user_DB.resumes.${updateData}`]: {
+                      "janeiro": {
+                        "1": [true, "Período", "LinkArquivo", 0, 0],
+                        "2": [true, "Período", "LinkArquivo", 0, 0],
+                        "3": [true, "Período", "LinkArquivo", 0, 0],
+                        "4": [true, "Período", "LinkArquivo", 0, 0],
+                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                      }
+                    }
+                  }
+                });
+                break;
+            case "test":{
+              return res.status(200).json({
+                "update": true,
+                "operação": updateOperation
+              });
+            }
           }
           
           return res.status(200).json({
@@ -58,7 +81,8 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
     }
 
     return res.status(200).json({
-      "update": false
+      "update": false,
+      "data": user, password, updateOperation, userName, updateField, updateData
     })
 
   } catch(error) {
