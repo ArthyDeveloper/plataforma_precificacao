@@ -52,90 +52,90 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
               await col.updateOne({ "user.name": userName },
                 {
                   $set:{
-                    [`user_DB.resumes.${updateData}`]: {
+                    [`user_DB.resumes.${updateField}`]: {
                       "janeiro": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "fevereiro": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "março": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "abril": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "maio": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "junho": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "julho": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "agosto": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "setembro": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "outubro": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "novembro": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       },
                       "dezembro": {
-                        "1": [true, "Período", "LinkArquivo", 0, 0],
-                        "2": [true, "Período", "LinkArquivo", 0, 0],
-                        "3": [true, "Período", "LinkArquivo", 0, 0],
-                        "4": [true, "Período", "LinkArquivo", 0, 0],
-                        "5": [true, "Período", "LinkArquivo", 0, 0]
+                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
+                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
                       }
                     }
                   }
