@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Grafico from "./Grafico";
 import "../styles/Dashboard Clientes/dashboardClient.css";
+import "../styles/Dashboard Clientes/informações.css"
 import "../styles/Dashboard Clientes/downloads.css";
 import "../styles/Dashboard Clientes/gráfico.css";
 
@@ -88,7 +89,11 @@ const Dashboard_Client = ({user}) => {
         {/* Dashbaord */}
         {activePage === "Dashboard" && (
           <div className="dashboardContainer centerDiv">
-            <PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />
+            {<PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />}
+            <div className="informationsContainer">
+              <div className="infoDiv1 hoverEffect"></div>
+              <div className="infoDiv2 hoverEffect"></div>
+            </div>
             <div className="containerArquivosGrafico">
               <div className="filesDiv hoverEffect">
                 <div className="filesHeaderDiv">

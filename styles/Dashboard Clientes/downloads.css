@@ -5,7 +5,7 @@
   transform -translate-x-1/2
   flex
   flex-row
-  justify-evenly
+  justify-between
   w-full
   h-fit
 }
@@ -14,7 +14,7 @@
 .filesDiv{ @apply
   flex-col
   relative
-  w-[200px]
+  w-[220px]
   h-[380px]
   pb-5
   rounded-md
@@ -65,6 +65,7 @@ option{ @apply
   flex-row
   w-[70px]
   h-[25px]
+  appearance-auto
   border
   text-white
   border-neutral-700

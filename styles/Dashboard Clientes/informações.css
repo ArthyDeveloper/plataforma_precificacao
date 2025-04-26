@@ -1,0 +1,22 @@
+.informationsContainer{ @apply
+  flex flex-row
+  justify-between
+  h-[100px]
+  w-full
+  mb-[7px]
+}
+
+.infoDiv1, .infoDiv2{ @apply
+  border border-neutral-700
+  h-full
+}
+
+.infoDiv1 { @apply
+  w-[220px]
+  rounded-md
+}
+
+.infoDiv2 { @apply
+  w-[421px]
+  rounded-md
+}
