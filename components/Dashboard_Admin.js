@@ -53,7 +53,7 @@ const Dashboard_Admin = ({user}) => {
       }
 
     } catch (error) {
-      console.log("Erro:", error)
+      console.log("Erro:", error);
     }
   }
 
