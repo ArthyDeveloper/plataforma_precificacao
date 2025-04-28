@@ -29,7 +29,6 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
       return res.status(200).json({
         "status": true,
         "foundDocuments": false,
-        user, senha
       });
     }
   } catch (error) {
