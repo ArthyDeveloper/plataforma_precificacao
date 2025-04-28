@@ -12,7 +12,7 @@
 }
 
 .infoDiv1 { @apply
-  w-[220px]
+  w-[34%]
   rounded-md
 }
 
@@ -21,7 +21,7 @@
 }
 
 .infoDiv2 { @apply
-  w-[421px]
+  w-[65%]
   rounded-md
   flex flex-row
   justify-evenly
