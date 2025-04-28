@@ -26,7 +26,7 @@ const Dashboard_Admin = ({user}) => {
   const buttonClasses = (página) => activePage === página ? "!bg-gray-900 text-white" : "!bg-gray-800";
 
   const listUsers = async () => {
-    const url = "/api/findUsers";
+    const url = "/api/admin/findUsers";
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -62,7 +62,7 @@ const Dashboard_Admin = ({user}) => {
   }, [user]);
   
   const register = async () => {
-    const url = "/api/register"
+    const url = "/api/admin/register"
     try{
       const response = await fetch(url, {
         method: "POST",
@@ -91,7 +91,7 @@ const Dashboard_Admin = ({user}) => {
   }
 
   const update = async () => {
-    const url = "/api/update"
+    const url = "/api/admin/update"
     try{
       const response = await fetch(url, {
         method: "PUT",

@@ -1,4 +1,4 @@
-import clientPromise from "../../../lib/mongodb";
+import clientPromise from "../../../../lib/mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function update(req:NextApiRequest, res:NextApiResponse){
