@@ -16,7 +16,40 @@
   rounded-md
 }
 
+.infoDiv2:hover .middleBarDecoration { @apply
+  border-l-neutral-500
+}
+
 .infoDiv2 { @apply
   w-[421px]
   rounded-md
+  flex flex-row
+  justify-evenly
+  items-center
+}
+
+.infoSubDiv{ @apply
+  h-[80%]
+  w-[45%]
+}
+
+.middleBarDecoration{ @apply
+  h-[90%]
+  duration-100
+  ease-out
+  border border-l-neutral-700
+  border-r-0 border-t-0 border-b-0
+}
+
+.titleInfo { @apply
+  text-white
+  text-center
+  text-[20px]
+  font-semibold
+}
+
+.infoDesc { @apply
+  text-white
+  text-[15px]
+  text-center
 }

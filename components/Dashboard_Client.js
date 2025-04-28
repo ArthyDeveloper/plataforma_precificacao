@@ -91,8 +91,20 @@ const Dashboard_Client = ({user}) => {
           <div className="dashboardContainer centerDiv">
             {<PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />}
             <div className="informationsContainer">
-              <div className="infoDiv1 hoverEffect"></div>
-              <div className="infoDiv2 hoverEffect"></div>
+              <div className="infoDiv1 hoverEffect">
+                <h1 className="titleInfo">Olá, Usuário!</h1>
+              </div>
+              <div className="infoDiv2 hoverEffect">
+                <div className="infoStatusDiv infoSubDiv">
+                  <h1 className="titleInfo">Status</h1>
+                  <h2 className="infoDesc">Fim do serviço: xx/xx</h2>
+                </div>
+                <div className="middleBarDecoration"></div>
+                <div className="infoContatoDiv infoSubDiv">
+                  <h1 className="titleInfo">Contato</h1>
+                  <h2 className="infoDesc">Telefone: (xx) xxxx-xxxx</h2>
+                </div>
+              </div>
             </div>
             <div className="containerArquivosGrafico">
               <div className="filesDiv hoverEffect">
