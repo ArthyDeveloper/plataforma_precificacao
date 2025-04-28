@@ -64,6 +64,41 @@ const Dashboard_Client = ({user}) => {
     ]);
   }
 
+  const gatherUserData = async () => {
+      const url = "/api/client/findUser";
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            clientUser: user.name,
+            clientPassword: user.password
+          })
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        if (data?.searchUser?.length) {
+          console.log(data)
+        } else {
+          console.log(data)
+        }
+  
+      } catch (error) {
+        console.log("Erro:", error);
+      }
+    }
+  
+    useEffect(() => {
+      console.log(user.name, user.password)
+      gatherUserData();
+    }, [user]);
+
   // Botões com as páginas;
   const PagesButtons = ({mudarPágina, buttonClasses}) => {
     return(

@@ -8,7 +8,7 @@ export default function Home() {
   type User = {
     name: string;
     password: string;
-    userType: "admin" | "client";
+    userType: "admin" | "client"; // TODO: Remover depois
   };
 
   /* Bypass Login; */
