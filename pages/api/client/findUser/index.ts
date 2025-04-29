@@ -9,12 +9,14 @@ export default async function findUser(req: NextApiRequest, res: NextApiResponse
   const { clientUser, clientPassword } = req.body;
   const bcrypt = require("bcryptjs");
 
+  console.log(req.body)
+
   try{
     const client = await clientPromise;
     const db = client.db("Database");
     const col = db.collection("Users");
 
-    const searchUser = await col.findOne({ "user.name": clientUser, "user.userType": "client"})
+    const searchUser = await col.findOne({ "user.name": clientUser, "user.userType": "client" })
     if (searchUser){
       const passwordMatches = await bcrypt.compare(clientPassword, searchUser.user.password);
       if (passwordMatches){
@@ -24,14 +26,14 @@ export default async function findUser(req: NextApiRequest, res: NextApiResponse
         })
         return
       } else {
-        res.status(500).json({
+        res.status(401).json({
           status: false,
           reason: "Usuário ou senha incorretos."
         })
         return
       }
     } else {
-      res.status(500).json({
+      res.status(401).json({
         status: false,
         reason: "Usuário ou senha incorretos."
       })

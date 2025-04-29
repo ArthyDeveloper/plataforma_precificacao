@@ -64,40 +64,47 @@ const Dashboard_Client = ({user}) => {
     ]);
   }
 
+  const [userData, setUserData] = useState(null);
+
   const gatherUserData = async () => {
-      const url = "/api/client/findUser";
-      try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            clientUser: user.name,
-            clientPassword: user.password
-          })
-        });
-  
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-  
-        const data = await response.json();
-        if (data?.searchUser?.length) {
-          console.log(data)
-        } else {
-          console.log(data)
-        }
-  
-      } catch (error) {
-        console.log("Erro:", error);
+    const url = "/api/client/findUser";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          clientUser: user.name,
+          clientPassword: user.password
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
+
+      const data = await response.json();
+      if (data?.searchUser?.length) {
+        console.log(data)
+        await setUserData(data.searchUser[0])
+      } else {
+        console.log(data)
+      }
+
+    } catch (error) {
+      console.log("Erro:", error);
     }
+  }
   
-    useEffect(() => {
-      console.log(user.name, user.password)
-      gatherUserData();
-    }, [user]);
+  useEffect(() => {
+    console.log(user.name, user.password)
+    const getUser = async () => {
+      await gatherUserData();
+    };
+
+    getUser();
+  }, [user]);
 
   // Botões com as páginas;
   const PagesButtons = ({mudarPágina, buttonClasses}) => {
@@ -169,10 +176,10 @@ const Dashboard_Client = ({user}) => {
                     </select>
                   </div>
                 </div>
-
+                
                 <div className="filesBox">
                   <div className="file">
-                    <h1 className="fileName">01.01 - 14.01</h1>
+                    <h1 className="fileName">Período</h1>
                     <button className="downloadBtn" onClick={() => updateDataset()}>
                       <svg className="downloadSvg centerDiv size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -180,6 +187,7 @@ const Dashboard_Client = ({user}) => {
                     </button>
                   </div>
                 </div>
+                
               </div>
 
               <div className="graficoDiv hoverEffect">
