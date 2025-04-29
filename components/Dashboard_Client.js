@@ -27,27 +27,8 @@ const Dashboard_Client = ({user}) => {
     years.push(year);
   }
 
-  // Muda o valor/estado de ano e mês de acordo com input selector;
-  // TODO: Implementar busca no DB e API para atualizar gráfico e downloads.
-  const termosPesquisa = (e) => {
-    const {name, value} = e.target;
-
-    if (name === "ano"){
-      setAno(value);
-    } else if (name === "mês"){
-      console.log(value, typeof(value))
-      setMes(value);
-    }
-  }
-
-  // Debug: Verifica se mês e ano atuais estão de acordo.
-  // TODO: Valores serão usados para requisição API e atualização do gráfico.
-  useEffect(() => {
-    console.log(`Ano: ${ano} | Mês: ${mes} | Value: none`);
-  }, [ano, mes]);
-
-  // Códigos do Gráfico;
-  const [datasetGrafico, setDataset] = useState([
+   // Códigos do Gráfico;
+   const [datasetGrafico, setDataset] = useState([
     {name: 'Sem. 1', Ganhando: 2400, Perdendo: 1700},
     {name: 'Sem. 2', Ganhando: 1398, Perdendo: 3000},
     {name: 'Sem. 3', Ganhando: 3800, Perdendo: 2000},
@@ -63,6 +44,24 @@ const Dashboard_Client = ({user}) => {
       {name: 'Sem. 4', Ganhando: 1300, Perdendo: 1500},
     ]);
   }
+  
+  // Muda o valor/estado de ano e mês de acordo com input selector;
+  // TODO: Implementar busca no DB e API para atualizar gráfico e downloads.
+  const termosPesquisa = (e) => {
+    const {name, value} = e.target;
+
+    if (name === "ano"){
+      setAno(value);
+    } else if (name === "mês"){
+      setMes(value);
+    }
+  }
+
+  // Debug: Verifica se mês e ano atuais estão de acordo.
+  // TODO: Valores serão usados para requisição API e atualização do gráfico.
+  useEffect(() => {
+    console.log(`Ano: ${ano} | Mês: ${mes} | Value: none`);
+  }, [ano, mes]);
 
   const [userData, setUserData] = useState(null);
 
@@ -85,11 +84,12 @@ const Dashboard_Client = ({user}) => {
       }
 
       const data = await response.json();
-      if (data?.searchUser?.length) {
-        console.log(data)
-        await setUserData(data.searchUser[0])
+
+      if (data) {
+        setUserData(data)
+        console.log("DB fetch:", data)
       } else {
-        console.log(data)
+        console.log("Erro")
       }
 
     } catch (error) {
@@ -98,13 +98,11 @@ const Dashboard_Client = ({user}) => {
   }
   
   useEffect(() => {
-    console.log(user.name, user.password)
     const getUser = async () => {
       await gatherUserData();
     };
-
     getUser();
-  }, [user]);
+  }, []);
 
   // Botões com as páginas;
   const PagesButtons = ({mudarPágina, buttonClasses}) => {
@@ -178,14 +176,22 @@ const Dashboard_Client = ({user}) => {
                 </div>
                 
                 <div className="filesBox">
-                  <div className="file">
-                    <h1 className="fileName">Período</h1>
-                    <button className="downloadBtn" onClick={() => updateDataset()}>
-                      <svg className="downloadSvg centerDiv size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                      </svg>
-                    </button>
-                  </div>
+                  {[1, 2, 3, 4, 5].map((key) => {
+                    const file = userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes]?.[key];
+                    if (file && file[0] === true) {
+                      return (
+                        <div key={key} className="file">
+                          <h1 className="fileName">{file[1]}</h1>
+                          <button className="downloadBtn" onClick={() => updateDataset()}>
+                            <svg className="downloadSvg centerDiv size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                          </button>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })}
                 </div>
                 
               </div>

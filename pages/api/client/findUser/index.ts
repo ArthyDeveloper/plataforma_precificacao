@@ -9,8 +9,6 @@ export default async function findUser(req: NextApiRequest, res: NextApiResponse
   const { clientUser, clientPassword } = req.body;
   const bcrypt = require("bcryptjs");
 
-  console.log(req.body)
-
   try{
     const client = await clientPromise;
     const db = client.db("Database");
@@ -24,6 +22,7 @@ export default async function findUser(req: NextApiRequest, res: NextApiResponse
           status: true,
           searchUser
         })
+        console.log(searchUser)
         return
       } else {
         res.status(401).json({
