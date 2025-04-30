@@ -17,7 +17,7 @@ export default async function register(req:NextApiRequest, res:NextApiResponse){
     const searchUser = await col.findOne({ "user.name": user, "user.userType": "admin" });
     if (searchUser){
       const passwordMatches = await bcrypt.compare(password, searchUser.user.password);
-      if (passwordMatches == true){
+      if (passwordMatches){
         const encryptedUserPassword = await bcrypt.hash(senha, 12);
         const anoAtual = String(new Date().getFullYear());
         await col.insertOne({

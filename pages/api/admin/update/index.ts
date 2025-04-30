@@ -17,7 +17,7 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
     const searchUser = await col.findOne({ "user.name": user, "user.userType": "admin" });
     if (searchUser){
       const passwordMatches = await bcrypt.compare(password, searchUser.user.password);
-      if (passwordMatches == true){
+      if (passwordMatches){
         const searchDocument = await col.findOne({ "user.name": userName });
         if (searchDocument){
           switch(updateOperation){

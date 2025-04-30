@@ -18,7 +18,7 @@ export default async function verifyLogin(req: NextApiRequest, res: NextApiRespo
     if (searchUser){
       const passwordMatches = await bcrypt.compare(senha, searchUser.user.password);
 
-      if (passwordMatches == true){
+      if (passwordMatches){
         const searchDocuments = await col.find({ "user.userType": "client" }).toArray();
         return res.status(200).json({
           status: true,
