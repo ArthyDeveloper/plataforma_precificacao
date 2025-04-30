@@ -53,3 +53,10 @@
   text-[15px]
   text-center
 }
+
+.userGreeting { @apply
+  relative
+  top-1/2
+  transform -translate-y-1/2
+  text-[125%]
+}

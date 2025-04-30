@@ -124,6 +124,7 @@ option{ @apply
   mr-0.5
   bg-neutral-300
   hover:bg-neutral-400
+  disabled:invisible
 }
 
 .downloadSvg{ @apply
