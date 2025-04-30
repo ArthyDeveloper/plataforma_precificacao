@@ -4,6 +4,7 @@ import "../styles/dashboardAdmin.css";
 const Dashboard_Admin = ({user}) => {
   // Register;
   const [usuário, setUser] = useState("");
+  const [usuárioGreeting, setUserGreeting] = useState(usuário);
   const [senha, setSenha] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
@@ -73,6 +74,7 @@ const Dashboard_Admin = ({user}) => {
           user: user.name,
           password: user.password,
           name: usuário,
+          userGreeting: usuárioGreeting,
           senha: senha,
           email: email,
           telefone: telefone
@@ -155,6 +157,7 @@ const Dashboard_Admin = ({user}) => {
           {activePage === "Registrar" && (
             <div className="adminInputDiv">
               <input value={usuário} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
+              <input value={usuárioGreeting} onChange={(e) => setUserGreeting(e.target.value)} className="adminInput !mt-0" placeholder="Saudação"/>
               <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>

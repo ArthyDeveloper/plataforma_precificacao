@@ -54,88 +54,88 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
                   $set:{
                     [`user_DB.resumes.${updateField}`]: {
                       "janeiro": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "fevereiro": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "março": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "abril": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "maio": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "junho": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "julho": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "agosto": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "setembro": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "outubro": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "novembro": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "dezembro": {
-                        "1": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "2": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "3": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "4": [true, "Pendente", "LinkArquivo", 0, 0],
-                        "5": [true, "Pendente", "LinkArquivo", 0, 0]
+                        "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       }
                     }
                   }

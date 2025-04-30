@@ -14,7 +14,7 @@ export default function Home() {
   /* Bypass Login; */
   const logado = true; 
   const usuário = {
-    name: "NovoDB",
+    name: "NovoDB2",
     password: "123",
     userType: "client" // TODO: Remover depois, usando para bypass e render de dashboard
   };
