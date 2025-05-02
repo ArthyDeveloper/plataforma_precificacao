@@ -33,6 +33,12 @@
   w-[45%]
 }
 
+.infoStatusDiv, .infoContatoDiv{ @apply
+  relative
+  top-1/2
+  transform -translate-y-1/2
+}
+
 .middleBarDecoration{ @apply
   h-[90%]
   duration-100
