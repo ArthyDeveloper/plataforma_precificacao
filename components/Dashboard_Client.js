@@ -146,7 +146,7 @@ const Dashboard_Client = ({user}) => {
         {/* Dashbaord */}
         {activePage === "Dashboard" && (
           <div className="dashboardContainer centerDiv">
-            {<PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />}
+            {/*<PagesButtons mudarPágina={mudarPágina} buttonClasses={buttonClasses} />*/}
             <div className="informationsContainer">
               <div className="infoDiv1 hoverEffect">
                 <h1 className="titleInfo userGreeting">

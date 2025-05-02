@@ -21,8 +21,9 @@
   flex-row
   items-center
   rounded-md
-  border
-  border-neutral-700
+  /*
+  border border-neutral-700
+  */
 }
 
 .dashboardContainer{ @apply
