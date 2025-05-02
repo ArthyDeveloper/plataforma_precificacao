@@ -27,36 +27,14 @@ const Dashboard_Client = ({user}) => {
     years.push(year);
   }
 
-   // Códigos do Gráfico;
-   const [datasetGrafico, setDataset] = useState([
-    {name: 'Sem. 1', Ganhando: 2400, Perdendo: 1700},
-    {name: 'Sem. 2', Ganhando: 1398, Perdendo: 3000},
-    {name: 'Sem. 3', Ganhando: 3800, Perdendo: 2000},
-    {name: 'Sem. 4', Ganhando: 1500, Perdendo: 1300},
+  // Códigos do Gráfico;
+  const [datasetGrafico, setDataset] = useState([
+    {name: 'Sem. 1', Ganhando: 0, Perdendo: 0},
+    {name: 'Sem. 2', Ganhando: 0, Perdendo: 0},
+    {name: 'Sem. 3', Ganhando: 0, Perdendo: 0},
+    {name: 'Sem. 4', Ganhando: 0, Perdendo: 0},
   ]);
-
-  // Atualiza o gráfico;
-  const updateDataset = () => {
-    setDataset([
-      {name: 'Sem. 1', Ganhando: 1700, Perdendo: 2400},
-      {name: 'Sem. 2', Ganhando: 3000, Perdendo: 1398},
-      {name: 'Sem. 3', Ganhando: 2000, Perdendo: 3800},
-      {name: 'Sem. 4', Ganhando: 1300, Perdendo: 1500},
-    ]);
-  }
   
-  // Muda o valor/estado de ano e mês de acordo com input selector;
-  // TODO: Implementar busca no DB e API para atualizar gráfico e downloads.
-  const termosPesquisa = (e) => {
-    const {name, value} = e.target;
-
-    if (name === "ano"){
-      setAno(value);
-    } else if (name === "mês"){
-      setMes(value);
-    }
-  }
-
   // Debug: Verifica se mês e ano atuais estão de acordo.
   // TODO: Valores serão usados para requisição API e atualização do gráfico.
   useEffect(() => {
@@ -87,6 +65,7 @@ const Dashboard_Client = ({user}) => {
 
       if (data) {
         setUserData(data)
+        updateDataset(data)
         console.log("DB fetch:", data)
       } else {
         console.log("Erro")
@@ -97,12 +76,50 @@ const Dashboard_Client = ({user}) => {
     }
   }
   
+  // Atualiza o gráfico;
+  const updateDataset = (userData) => {
+    const data = userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes]
+
+    const updatedDataset = [];
+
+    ["1", "2", "3", "4", "5"].forEach((key) => {
+      if(data?.[key]?.["scheduled"]){
+        updatedDataset.push({
+          name: `Sem. ${key}`,
+          Ganhando: data?.[key]?.["ganhando"],
+          Perdendo: data?.[key]?.["perdendo"]
+        });
+      }
+    })
+  
+    // Update the state with the final dataset
+    setDataset(updatedDataset);
+  }
+
   useEffect(() => {
     const getUser = async () => {
       await gatherUserData();
     };
     getUser();
   }, []);
+
+  useEffect(() => {
+    if (userData) {
+      updateDataset(userData);
+    }
+  }, [ano, mes, userData]);
+
+  const termosPesquisa = (e) => {
+    const {name, value} = e.target;
+
+    if (name === "ano"){
+      setAno(value);
+      updateDataset(userData)
+    } else if (name === "mês"){
+      setMes(value);
+      updateDataset(userData)
+    }
+  }
 
   // Botões com as páginas;
   const PagesButtons = ({mudarPágina, buttonClasses}) => {
