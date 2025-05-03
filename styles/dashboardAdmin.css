@@ -5,6 +5,49 @@
   transform -translate-x-1/2 -translate-y-1/2
 }
 
+.containerParent{ @apply
+  absolute
+  top-0
+  left-0
+  w-full
+  h-full
+  bg-neutral-950
+  overflow-x-hidden
+}
+
+.pageButtonsContainer{ @apply
+  relative
+  rounded-sm
+  top-1/2
+  left-1/2
+  transform -translate-x-1/2 -translate-y-1/2
+  w-[400px]
+  h-[500px]
+  bg-neutral-900
+  overflow-hidden
+  border border-neutral-700
+}
+
+.pageButtonsDiv{ @apply
+  relative
+  flex
+  pt-2 pb-2
+  w-full
+  h-[60px]
+  text-center
+  justify-evenly
+  rounded-t-sm
+  text-white
+  bg-neutral-950
+}
+
+.pagesDiv{ @apply
+  relative
+  w-full
+  h-[90%]
+  bg-neutral-950
+}
+
 /* Users Panel */
 .usersDiv{ @apply
   relative
@@ -31,7 +74,8 @@
   h-full
   transition-all
   duration-100
-  ease-in-out;
+  ease-in-out
+  rounded-sm
 }
 
 .btnAdminSelector:hover{ @apply
@@ -67,10 +111,11 @@
   relative
   w-28
   h-10
-  rounded-lg
+  rounded-sm
   mt-3
   font-bold
   transition duration-100
+  text-white
   bg-gray-800
 }
 

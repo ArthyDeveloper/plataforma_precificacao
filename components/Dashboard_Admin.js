@@ -14,7 +14,7 @@ const Dashboard_Admin = ({user}) => {
   const [updateField, setUpdateField] = useState("");
   const [updateData, setUpdateData] = useState("");
 
-  // Display clientes;
+  // Display usuários;
   const [usersDocuments, setUsersDocuments] = useState([]);
 
   // Mudança de menus;
@@ -26,6 +26,7 @@ const Dashboard_Admin = ({user}) => {
 
   const buttonClasses = (página) => activePage === página ? "!bg-gray-900 text-white" : "!bg-gray-800";
 
+  // Listagem de usuários;
   const listUsers = async () => {
     const url = "/api/admin/findUsers";
     try {
@@ -62,6 +63,7 @@ const Dashboard_Admin = ({user}) => {
     listUsers();
   }, [user]);
   
+  // Registro de usuários;
   const register = async () => {
     const url = "/api/admin/register"
     try{
@@ -92,6 +94,7 @@ const Dashboard_Admin = ({user}) => {
     }
   }
 
+  // Atualização de documentos de clientes;
   const update = async () => {
     const url = "/api/admin/update"
     try{
@@ -122,10 +125,10 @@ const Dashboard_Admin = ({user}) => {
   }
 
   return(
-    <div className="absolute top-0 left-0 w-full h-full bg-gray-900 overflow-x-hidden">
-      <div className="relative rounded-sm top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[500px] bg-gray-700 overflow-hidden">
+    <div className="containerParent">
+      <div className="pageButtonsContainer">
         {/* Top Bar - Options */}
-        <div className="relative rounded-t-sm w-full h-[40px] bg-gray-800 justify-evenly flex text-white text-center">
+        <div className="pageButtonsDiv">
           <button className={`btnAdminSelector ${buttonClasses("Usuários")}`}
             onClick={() => mudarPágina("Usuários")}
           >Usuários</button>
@@ -137,7 +140,7 @@ const Dashboard_Admin = ({user}) => {
           >Update</button>
         </div>
 
-        <div className="relative w-full h-[90%] bg-gray-700">
+        <div className="pagesDiv">
           {/* Exibe páginas de acordo com estado ativo. */}
 
           {/* Users Form */}
@@ -157,7 +160,7 @@ const Dashboard_Admin = ({user}) => {
           {activePage === "Registrar" && (
             <div className="adminInputDiv">
               <input value={usuário} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
-              <input value={usuárioGreeting} onChange={(e) => setUserGreeting(e.target.value)} className="adminInput !mt-0" placeholder="Saudação"/>
+              <input value={usuárioGreeting} onChange={(e) => setUserGreeting(e.target.value)} className="adminInput" placeholder="Saudação"/>
               <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>
