@@ -31,7 +31,7 @@ const Grafico = ({datasetGrafico}) => {
         <Line type="bumpX" dataKey="Ganhando" fill="#8884d8" stroke="#00FA9A" strokeWidth="3" />
         <Line type="bumpX" dataKey="Perdendo" fill="#82ca9d" stroke="orange" strokeWidth="3" /> 
       </LineChart>
-  </ResponsiveContainer>
+    </ResponsiveContainer>
   );
 };
 
