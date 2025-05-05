@@ -39,6 +39,16 @@
   transform -translate-y-1/2
 }
 
+.serviceStatusCircle{ @apply
+  absolute
+  right-0
+  top-[-10px]
+  rounded-full
+  border-2 border-neutral-700
+  w-[10px]
+  h-[10px]
+}
+
 .middleBarDecoration{ @apply
   h-[90%]
   duration-100

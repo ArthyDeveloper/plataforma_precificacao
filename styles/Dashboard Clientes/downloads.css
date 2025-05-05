@@ -132,6 +132,33 @@ option{ @apply
   w-[20px]
 }
 
+/* Waiting Reports */
+
+.fileWaiting { @apply
+  flex flex-row
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  rounded-sm
+  w-full
+  h-[50px]
+  text-center
+  items-center
+  justify-between
+  p-2
+  border
+  border-neutral-700
+  bg-neutral-800
+  duration-100
+  ease-out
+  hover:border-neutral-500
+}
+
+.clockSvg { @apply
+  relative
+  text-white
+}
+
 .filesBox::-webkit-scrollbar { @apply
   w-[5px]
 }
