@@ -56,87 +56,87 @@ export default async function update(req:NextApiRequest, res:NextApiResponse){
                     [`user_DB.resumes.${updateField}`]: {
                       "janeiro": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "fevereiro": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "março": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "abril": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "maio": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "junho": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "julho": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "agosto": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "setembro": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "outubro": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "novembro": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       },
                       "dezembro": {
                         "1": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "2": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "3": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "4": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0},
-                        "5": {"scheduled": true, "fileName": "Semana 1", "fileLink": "none", "ganhando": 0, "perdendo": 0}
+                        "2": {"scheduled": true, "fileName": "Semana 2", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "3": {"scheduled": true, "fileName": "Semana 3", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "4": {"scheduled": true, "fileName": "Semana 4", "fileLink": "none", "ganhando": 0, "perdendo": 0},
+                        "5": {"scheduled": false, "fileName": "Semana 5", "fileLink": "none", "ganhando": 0, "perdendo": 0}
                       }
                     }
                   }
