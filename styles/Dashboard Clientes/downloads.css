@@ -119,12 +119,11 @@ option{ @apply
   flex
   cursor-pointer
   w-[50px]
-  h-[25px]
+  h-[30px]
   rounded-sm
   mr-0.5
-  bg-neutral-300
-  hover:bg-neutral-400
-  disabled:invisible
+  bg-neutral-950
+  hover:bg-neutral-900
 }
 
 .downloadSvg{ @apply

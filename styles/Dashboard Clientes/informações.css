@@ -29,7 +29,7 @@
 }
 
 .infoSubDiv{ @apply
-  h-[80%]
+  h-full
   w-[45%]
 }
 
@@ -42,7 +42,7 @@
 .serviceStatusCircle{ @apply
   absolute
   right-0
-  top-[-10px]
+  top-3
   rounded-full
   border-2 border-neutral-700
   w-[10px]
@@ -75,4 +75,15 @@
   top-1/2
   transform -translate-y-1/2
   text-[125%]
+}
+
+.serviceStatusTitle{ @apply
+  relative
+  top-1/2
+  transform -translate-y-1/2
+}
+
+.contatoTitle{ @apply
+  relative
+  mt-[18px]
 }

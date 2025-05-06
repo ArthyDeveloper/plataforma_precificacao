@@ -155,24 +155,27 @@ const Dashboard_Client = ({user}) => {
               </div>
               <div className="infoDiv2 hoverEffect">
                 <div className="infoStatusDiv infoSubDiv">
-                  {userData?.searchUser?.user_DB?.serviceStatus?.running === true ? (
+                  {!userData ? (
                     <>
-                      <h1 className="titleInfo">Serviço Ativo</h1>
-                      {/* <h2 className="infoDesc">Ativo</h2> */}
+                      <h1 className="titleInfo serviceStatusTitle">Status...</h1>
+                      <div className="serviceStatusCircle bg-gray-500 animate-pulse"></div>
+                    </>
+                  ) : userData?.searchUser?.user_DB?.serviceStatus?.running === true ? (
+                    <>
+                      <h1 className="titleInfo serviceStatusTitle">Serviço Ativo</h1>
                       <div className="serviceStatusCircle bg-green-500 animate-pulse"></div>
                     </>
                   ) : (
                     <>
-                      <h1 className="titleInfo">Serviço Expirado</h1>
-                      {/* <h2 className="infoDesc">Expirado</h2> */}
+                      <h1 className="titleInfo serviceStatusTitle">Serviço Expirado</h1>
                       <div className="serviceStatusCircle bg-red-500 animate-pulse"></div>
                     </>
                   )}
                 </div>
                 <div className="middleBarDecoration"></div>
                 <div className="infoContatoDiv infoSubDiv">
-                  <h1 className="titleInfo">Contato</h1>
-                  <h2 className="infoDesc">Telefone: (xx) xxxx-xxxx</h2>
+                  <h1 className="titleInfo contatoTitle">Contato</h1>
+                  <h2 className="infoDesc contatoDesc">Telefone: (xx) xxxx-xxxx</h2>
                 </div>
               </div>
             </div>
@@ -208,21 +211,26 @@ const Dashboard_Client = ({user}) => {
                 <div className="filesBox">
                   {[1, 2, 3, 4, 5].map((key) => {
                     const file = userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes]?.[key];
-                    if (file && file.scheduled === true && file.fileLink === "none") {
+                    if (file && file.scheduled && file.fileLink === "none") {
                       return (
                         <div key={key} className="fileWaiting">
                           {/*
-                          <h1 className="fileName">{"Semana " + key}</h1>
-                          <button className="downloadBtn" disabled={file.fileLink === "none"} onClick={() => updateDataset()}>
-                            <svg className="downloadSvg centerDiv size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                            </svg>
-                          </button>
                           */}
                           <h1 className="fileName">{"Semana " + key}</h1>
                           <svg className="clockSvg size-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                           </svg>
+                        </div>
+                      );
+                    } else if (file && file.scheduled && file.fileLink != "none"){
+                      return(
+                        <div key={key} className="fileWaiting">
+                          <h1 className="fileName">{"Semana " + key}</h1>
+                          <button className="downloadBtn" onClick={() => window.open(file.fileLink, '_blank')}>
+                            <svg className="downloadSvg centerDiv size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                          </button>
                         </div>
                       );
                     }
