@@ -23,7 +23,16 @@ const Grafico = ({datasetGrafico}) => {
           tickCount={5}
         />
         <Tooltip />
-        <Legend />
+        <Legend
+          verticalAlign="bottom" 
+          align="center" 
+          wrapperStyle={{
+            paddingTop: '5px',
+            position: 'absolute',
+            left: '50%',
+            transform: 'translate(-50%)'
+          }}
+        />
         <Line type="bumpX" dataKey="Ganhando" fill="#8884d8" stroke="#00FA9A" strokeWidth="3" />
         <Line type="bumpX" dataKey="Perdendo" fill="#82ca9d" stroke="orange" strokeWidth="3" /> 
       </LineChart>
