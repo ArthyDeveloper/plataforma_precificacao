@@ -23,7 +23,6 @@ export default async function findUser(req: NextApiRequest, res: NextApiResponse
           status: true,
           searchUser
         })
-        console.log(searchUser)
         return
       } else {
         res.status(401).json({
