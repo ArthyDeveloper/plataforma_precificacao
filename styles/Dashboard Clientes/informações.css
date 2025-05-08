@@ -39,6 +39,12 @@
   transform -translate-y-1/2
 }
 
+.serviceStatusTitle{ @apply
+  relative
+  top-1/2
+  transform -translate-y-1/2
+}
+
 .serviceStatusCircle{ @apply
   absolute
   right-0
@@ -47,6 +53,52 @@
   border-2 border-neutral-700
   w-[10px]
   h-[10px]
+}
+
+.expiredButton{ @apply
+  relative
+  w-[75px]
+  h-[28px]
+  border border-neutral-700
+  rounded-sm
+  text-white
+  text-[12px]
+}
+
+/* Popup Div */
+.popupDiv{ @apply
+  absolute
+  w-[300px]
+  h-[400px]
+  rounded-md
+  bg-neutral-900
+  border border-neutral-700
+}
+
+.popupDiv:hover .closeSvg{ @apply
+  stroke-neutral-600
+}
+
+.closePopupButton{ @apply
+  absolute
+  right-3
+  top-7
+  w-fit
+  h-fit
+  rounded-sm
+}
+
+.closePopupButton:hover .closeSvg{ @apply
+  stroke-red-500
+}
+
+.closeSvg{ @apply
+  stroke-neutral-700
+  duration-100
+  ease-out
+  relative
+  w-[25px]
+  h-[25px]
 }
 
 .middleBarDecoration{ @apply
@@ -75,12 +127,6 @@
   top-1/2
   transform -translate-y-1/2
   text-[125%]
-}
-
-.serviceStatusTitle{ @apply
-  relative
-  top-1/2
-  transform -translate-y-1/2
 }
 
 .contatoTitle{ @apply

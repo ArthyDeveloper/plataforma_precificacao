@@ -115,6 +115,16 @@ const Dashboard_Client = ({user}) => {
     }
   }
 
+  // Pop Up Renovar Serviço;
+  const [popUp, setPopUp] = useState(false);
+  const funcPopUp = () => {
+    if(popUp){
+      setPopUp(false);
+    } else {
+      setPopUp(true);
+    }
+  }
+
   // Botões com as páginas;
   const PagesButtons = ({mudarPágina, buttonClasses}) => {
     return(
@@ -161,7 +171,8 @@ const Dashboard_Client = ({user}) => {
                     </>
                   ) : (
                     <>
-                      <h1 className="titleInfo serviceStatusTitle">Serviço Expirado</h1>
+                      <h1 className="titleInfo serviceStatusTitle mt-[-10px]">Serviço Expirado</h1>
+                      <button className="expiredButton centerDiv mt-1 hoverEffect" onClick={() => funcPopUp()}>Renovar</button>
                       <div className="serviceStatusCircle bg-red-500 animate-pulse"></div>
                     </>
                   )}
@@ -210,7 +221,7 @@ const Dashboard_Client = ({user}) => {
                         <div key={key} className="fileWaiting">
                           <h1 className="fileName">{"Semana " + key}</h1>
                           <h1 className="downloadBtn">
-                            <svg className="clockSvg centerDiv size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white">
+                            <svg className="clockSvg centerDiv size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                             </svg>
                           </h1>
@@ -240,6 +251,17 @@ const Dashboard_Client = ({user}) => {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* PopUp Pagamento */}
+        {popUp === true && (
+          <div className="popupDiv hoverEffect centerDiv">
+            <button className="closePopupButton hoverEffect" onClick={() => funcPopUp()}>
+              <svg className="closeSvg centerDiv" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         )}
 
