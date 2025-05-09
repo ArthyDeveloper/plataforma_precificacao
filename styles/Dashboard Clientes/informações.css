@@ -68,6 +68,9 @@
 /* Popup Div */
 .popupDiv{ @apply
   absolute
+  flex flex-row
+  text-center
+  items-center
   w-[300px]
   h-[400px]
   rounded-md
@@ -99,6 +102,38 @@
   relative
   w-[25px]
   h-[25px]
+}
+
+.popupH1{ @apply
+  text-white
+  text-[23px]
+  font-semibold
+  absolute
+  top-2
+  left-3.5
+  flex
+}
+
+.instructionsList{ @apply
+  text-left
+  text-[15px]
+  w-full
+  pl-4
+  pr-4
+  absolute
+  bottom-4
+}
+
+.qrcodeDiv{ @apply
+  absolute
+  border border-red-500
+  w-full
+  h-[230px]
+  mt-[-60px]
+}
+
+.instructionsList li{ @apply
+  text-white
 }
 
 .middleBarDecoration{ @apply

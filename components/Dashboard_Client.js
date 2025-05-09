@@ -116,7 +116,7 @@ const Dashboard_Client = ({user}) => {
   }
 
   // Pop Up Renovar Serviço;
-  const [popUp, setPopUp] = useState(false);
+  const [popUp, setPopUp] = useState(true); // DEBUG: Colocar false quando estiver terminado
   const funcPopUp = () => {
     if(popUp){
       setPopUp(false);
@@ -262,6 +262,14 @@ const Dashboard_Client = ({user}) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
             </button>
+            <h1 className="popupH1">Renovação</h1>
+            <div className="qrcodeDiv"></div>
+            <ul className="instructionsList">
+              <li>1- Escaneie o QR Code;</li>
+              <li>2- Realize o pagamento;</li>
+              <li>3- Envie o comprovante;</li>
+              <li>4- Aguarde a confirmação;</li>
+            </ul>
           </div>
         )}
 
