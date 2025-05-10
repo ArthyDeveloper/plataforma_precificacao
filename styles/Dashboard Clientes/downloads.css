@@ -108,6 +108,7 @@ option{ @apply
 .fileName { @apply
   text-[12px]
   text-white
+  select-none
   w-fit
   h-fit
   font-semibold
@@ -126,9 +127,29 @@ option{ @apply
   hover:bg-neutral-900
 }
 
+.downloadBtn:active svg{ @apply
+  h-[55%]
+}
+
+.downloadBtn:active .downloadSvg{ @apply stroke-green-500}
+.downloadBtn:active .clockSvg{ @apply stroke-orange-500}
+
+.downloadBtn:active{ @apply
+  bg-neutral-900
+}
+
+svg{ @apply
+  duration-75
+}
+
 .downloadSvg{ @apply
   relative
   w-[20px]
+}
+
+.clockSvg { @apply
+  relative
+  text-white
 }
 
 /* Waiting Reports */
@@ -151,11 +172,6 @@ option{ @apply
   duration-100
   ease-out
   hover:border-neutral-500
-}
-
-.clockSvg { @apply
-  relative
-  text-white
 }
 
 .filesBox::-webkit-scrollbar { @apply

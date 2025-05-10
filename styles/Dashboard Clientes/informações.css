@@ -63,6 +63,12 @@
   rounded-sm
   text-white
   text-[12px]
+  duration-75
+  select-none
+}
+
+.expiredButton:active{ @apply
+  text-[11px]
 }
 
 /* Popup Div */
