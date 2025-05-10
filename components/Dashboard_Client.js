@@ -262,13 +262,17 @@ const Dashboard_Client = ({user}) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
             </button>
-            <h1 className="popupH1">Renovação</h1>
-            <div className="qrcodeDiv"></div>
+            <h1 className="popupTitle1">Renovação</h1>
+            <div className="qrcodeDiv">
+              <div className="qrcodeImg"></div>
+              <div className="qrcodeInfoDiv hoverEffect"></div>
+            </div>
+            <h1 className="popupTitle2">Instruções</h1>
             <ul className="instructionsList">
               <li>1- Escaneie o QR Code;</li>
               <li>2- Realize o pagamento;</li>
               <li>3- Envie o comprovante;</li>
-              <li>4- Aguarde a confirmação;</li>
+              <li>4- Aguarde a confirmação (24Hrs);</li>
             </ul>
           </div>
         )}
