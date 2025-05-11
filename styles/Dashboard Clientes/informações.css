@@ -142,9 +142,8 @@
 
 .qrcodeDiv{ @apply
   absolute
-  flex flex-row
-  justify-evenly
-  border border-red-500
+  flex flex-col
+  border border-neutral-950
   w-full
   h-[200px]
   mt-[-90px]
@@ -159,10 +158,23 @@
 }
 
 .qrcodeInfoDiv{ @apply
-  h-full
-  w-[25%]
+  h-[35%]
+  w-fit
+  pl-5
+  pr-5
+  mt-2
   rounded-md
   border border-neutral-700
+}
+
+.valorH1{ @apply
+  text-white
+  font-semibold
+}
+
+.preçoH2{ @apply
+  text-white
+  font-mono
 }
 
 .instructionsList li{ @apply

@@ -265,7 +265,18 @@ const Dashboard_Client = ({user}) => {
             <h1 className="popupTitle1">Renovação</h1>
             <div className="qrcodeDiv">
               <div className="qrcodeImg"></div>
-              <div className="qrcodeInfoDiv hoverEffect"></div>
+              <div className="qrcodeInfoDiv hoverEffect">
+                <h1 className="valorH1">Valor</h1>
+                {!userData ? (
+                  <>
+                    <h2 className="preçoH2">...</h2>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="preçoH2">{userData?.searchUser?.user_DB?.serviceStatus?.price}</h2>
+                  </>
+                )}
+              </div>
             </div>
             <h1 className="popupTitle2">Instruções</h1>
             <ul className="instructionsList">
