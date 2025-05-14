@@ -85,22 +85,7 @@ const Dashboard_Client = ({user}) => {
       }
     })
 
-    /*
-    const data = userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes]
-
-    const updatedDataset = [];
-
-    ["1", "2", "3", "4", "5"].forEach((key) => {
-      if(data?.[key]?.["scheduled"]){
-        updatedDataset.push({
-          name: `Sem. ${key}`,
-          Ganhando: data?.[key]?.["ganhando"],
-          Perdendo: data?.[key]?.["perdendo"]
-        });
-      }
-    }) */
-  
-    // Update the state with the final dataset
+    // Atualiza o gráfico com os dados filtrados;
     setDataset(updatedDataset);
   }
 
