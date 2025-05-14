@@ -33,6 +33,13 @@
   w-[45%]
 }
 
+.userGreeting { @apply
+  relative
+  top-1/2
+  transform -translate-y-1/2
+  text-[125%]
+}
+
 .infoStatusDiv, .infoContatoDiv{ @apply
   relative
   top-1/2
@@ -80,6 +87,29 @@
   border-r-0 border-t-0 border-b-0
 }
 
+/* Seção de Contato */
+.contactInfo{ @apply
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  flex flex-row
+  justify-evenly
+  items-center
+  w-fit
+  h-fit
+}
+
+.phone{ @apply
+  fill-white
+  size-7
+  relative
+  mt-1
+  p-1.5
+  mr-1
+  bg-neutral-900
+  rounded-full
+}
+
 .titleInfo { @apply
   text-white
   text-center
@@ -91,13 +121,6 @@
   text-white
   text-[15px]
   text-center
-}
-
-.userGreeting { @apply
-  relative
-  top-1/2
-  transform -translate-y-1/2
-  text-[125%]
 }
 
 .contatoTitle{ @apply
