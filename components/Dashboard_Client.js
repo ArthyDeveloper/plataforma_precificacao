@@ -73,6 +73,19 @@ const Dashboard_Client = ({user}) => {
   
   // Atualiza o gráfico;
   const updateDataset = (userData) => {
+    const updatedDataset = [];
+    Object.entries(userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes] || {}).forEach(([key, value]) => {
+
+      if(value?.scheduled){
+        updatedDataset.push({
+          name: `Sem. ${key}`,
+          Ganhando: value?.ganhando || 0,
+          Perdendo: value?.perdendo || 0
+        });
+      }
+    })
+
+    /*
     const data = userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes]
 
     const updatedDataset = [];
@@ -85,7 +98,7 @@ const Dashboard_Client = ({user}) => {
           Perdendo: data?.[key]?.["perdendo"]
         });
       }
-    })
+    }) */
   
     // Update the state with the final dataset
     setDataset(updatedDataset);
@@ -221,8 +234,8 @@ const Dashboard_Client = ({user}) => {
                 </div>
                 
                 <div className="filesBox">
-                  {[1, 2, 3, 4, 5].map((key) => {
-                    const file = userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes]?.[key];
+                  {Object.entries(userData?.searchUser?.user_DB?.resumes?.[ano]?.[mes] || {})
+                  .map(([key, file]) => {
                     if (file && file.scheduled && file.fileLink === "none") {
                       return (
                         <div key={key} className="fileWaiting">
