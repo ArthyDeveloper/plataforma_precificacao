@@ -39,6 +39,7 @@
   transform -translate-y-1/2
 }
 
+/* Seção Status */
 .serviceStatusTitle{ @apply
   relative
   top-1/2
