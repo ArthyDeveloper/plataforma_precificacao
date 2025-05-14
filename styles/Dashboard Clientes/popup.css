@@ -1,0 +1,109 @@
+/* Popup Div */
+.popupDiv{ @apply
+  absolute
+  flex flex-row
+  text-center
+  items-center
+  w-[300px]
+  h-[400px]
+  rounded-md
+  bg-neutral-900
+  border border-neutral-700
+}
+
+.popupDiv:hover .closeSvg{ @apply
+  stroke-neutral-600
+}
+
+.closePopupButton{ @apply
+  absolute
+  right-3
+  top-7
+  w-fit
+  h-fit
+  rounded-sm
+}
+
+.closePopupButton:hover .closeSvg{ @apply
+  stroke-red-500
+}
+
+.closeSvg{ @apply
+  stroke-neutral-700
+  duration-100
+  ease-out
+  relative
+  w-[25px]
+  h-[25px]
+}
+
+.popupTitle1{ @apply
+  text-white
+  text-[23px]
+  font-semibold
+  absolute
+  top-2
+  left-3.5
+  flex
+}
+
+.popupTitle2{ @apply
+  text-white
+  text-[23px]
+  font-semibold
+  absolute
+  mt-[145px]
+  left-3.5
+  flex
+}
+
+.instructionsList{ @apply
+  text-left
+  text-[15px]
+  w-full
+  pl-3.5
+  pr-4
+  absolute
+  bottom-3.5
+}
+
+.qrcodeDiv{ @apply
+  absolute
+  flex flex-col
+  border border-neutral-950
+  w-full
+  h-[200px]
+  mt-[-90px]
+  items-center
+}
+
+.qrcodeImg{ @apply
+  aspect-square
+  h-full
+  border border-blue-500
+  rounded-md
+}
+
+.qrcodeInfoDiv{ @apply
+  h-[35%]
+  w-fit
+  pl-5
+  pr-5
+  mt-2
+  rounded-md
+  border border-neutral-700
+}
+
+.valorH1{ @apply
+  text-white
+  font-semibold
+}
+
+.preçoH2{ @apply
+  text-white
+  font-mono
+}
+
+.instructionsList li{ @apply
+  text-white
+}

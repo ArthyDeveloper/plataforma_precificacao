@@ -4,6 +4,7 @@ import "../styles/Dashboard Clientes/dashboardClient.css";
 import "../styles/Dashboard Clientes/informações.css"
 import "../styles/Dashboard Clientes/downloads.css";
 import "../styles/Dashboard Clientes/gráfico.css";
+import "../styles/Dashboard Clientes/popup.css";
 
 const Dashboard_Client = ({user}) => {
   const meses = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
