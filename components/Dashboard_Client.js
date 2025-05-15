@@ -180,7 +180,7 @@ const Dashboard_Client = ({user}) => {
                     </>
                   ) : (
                     <>
-                      <h1 className="titleInfo serviceStatusTitle mt-[-10px]">Serviço Expirado</h1>
+                      <h1 className="titleInfo serviceStatusTitle mt-[-17px]">Serviço Expirado</h1>
                       <button className="expiredButton centerDiv mt-1 hoverEffect" onClick={() => funcPopUp()}>Renovar</button>
                       <div className="serviceStatusCircle bg-red-500 animate-pulse"></div>
                     </>
