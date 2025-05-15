@@ -1,6 +1,29 @@
-import { LineChart, Line, BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const Grafico = ({datasetGrafico}) => {
+
+  const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div style={{
+        backgroundColor: "oklch(23.0% 0 0.1)",
+        borderRadius: "2px",
+        border: " solid 1px oklch(37.1% 0 0)",
+        padding: "10px",
+        fontSize: "12px",
+        color: "white"
+      }}>
+        <p style={{ margin: 0, color: "white" }}>{label}</p>
+        {payload.map((entry, index) => (
+          <p key={index} style={{ color: entry.color, margin: 0 }}>
+            {entry.name}: {entry.value}
+          </p>
+        ))}
+      </div>
+    );
+  }
+
+  return null;};
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -22,7 +45,7 @@ const Grafico = ({datasetGrafico}) => {
           domain={["dataMin", "dataMax"]}
           tickCount={5}
         />
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />} />
         <Legend
           verticalAlign="bottom" 
           align="center" 
