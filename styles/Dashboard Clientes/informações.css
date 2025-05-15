@@ -12,7 +12,7 @@
 }
 
 .infoDiv1 { @apply
-  w-[34%]
+  w-[220px]
   rounded-md
 }
 
@@ -26,6 +26,16 @@
   flex flex-row
   justify-evenly
   items-center
+}
+
+.reloadDatabaseButton{ @apply
+  flex flex-row
+  absolute
+  border border-neutral-700
+  rounded-md
+  p-1.5
+  mt-1
+  ml-1
 }
 
 .infoSubDiv{ @apply
