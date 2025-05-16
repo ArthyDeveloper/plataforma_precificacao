@@ -22,10 +22,9 @@ const LoginForm = ({onLoginSuccess}) => {
       }
 
       const data = await response.json();
-      
       if (data.userFound){
         onLoginSuccess({
-          name: data.name,
+          name: user,
           password: senha,
           userType: data.userType
         });
