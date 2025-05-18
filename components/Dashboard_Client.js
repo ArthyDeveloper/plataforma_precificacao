@@ -115,7 +115,7 @@ const Dashboard_Client = ({user}) => {
   }
 
   // Pop Up Renovar Serviço;
-  const [popUp, setPopUp] = useState(true); // DEBUG: Colocar false quando estiver terminado
+  const [popUp, setPopUp] = useState(false); // DEBUG: Colocar false quando estiver terminado
   const funcPopUp = () => {
     if(popUp){
       setPopUp(false);
