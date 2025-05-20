@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/pageDefaultStyles.css";
 import LoginForm from "../components/loginForm";
 import Dashboard_Client from "../components/Dashboard_Client";
@@ -36,6 +36,10 @@ export default function Home() {
       return <div>Tipo de usuário desconhecido.</div>;
     }
   };
+
+  useEffect(() => {
+    document.title = "Título"; // Alterar para título fixo
+  }, [])
 
   return (
     <main className="absolute top-0 left-0 overflow-x-hidden w-full h-full bg-neutral-950">
