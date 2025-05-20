@@ -70,6 +70,37 @@ const Dashboard_Client = ({user}) => {
       console.log("Erro:", error);
     }
   }
+
+  const gatherInfos = async () => {
+    const url = "/api/client/getInfos";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          clientUser: user.name,
+          clientPassword: user.password
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data) {
+        console.log("Dados obtidos:", data)
+      } else {
+        console.log("Erro")
+      }
+
+    } catch (error) {
+      console.log("Erro:" + error);
+    }
+  }
   
   // Atualiza o gráfico;
   const updateDataset = (userData) => {
@@ -90,10 +121,15 @@ const Dashboard_Client = ({user}) => {
   }
 
   useEffect(() => {
+    const getInfos = async () => {
+      await gatherInfos();
+    };
     const getUser = async () => {
       await gatherUserData();
     };
+
     getUser()
+    getInfos()
   }, []);
 
   useEffect(() => {
