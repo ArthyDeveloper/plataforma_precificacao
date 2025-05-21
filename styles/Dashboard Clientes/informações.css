@@ -1,7 +1,8 @@
+/* Container Geral */
 .informationsContainer{ @apply
-  flex flex-row
+  flex flex-col xs:flex-row
   justify-between
-  h-[100px]
+  xs:h-[100px]
   w-full
   mb-[7px]
 }
@@ -11,21 +12,24 @@
   h-full
 }
 
+/* Div Saudações */
 .infoDiv1 { @apply
-  w-[220px]
+  relative
+  left-1/2 xs:left-auto
+  -translate-x-1/2 xs:-translate-x-0
+  w-[50%] xs:w-[220px]
+  h-[100px]
+  mb-1.5
   rounded-md
 }
 
-.infoDiv2:hover .middleBarDecoration { @apply
-  border-l-neutral-500
-}
-
-.infoDiv2 { @apply
-  w-[65%]
-  rounded-md
-  flex flex-row
-  justify-evenly
-  items-center
+/* Saudação ao Usuário */
+.userGreeting { @apply
+  text-white
+  relative
+  top-1/2
+  transform -translate-y-1/2
+  text-[125%]
 }
 
 .reloadDatabaseButton{ @apply
@@ -38,25 +42,39 @@
   ml-1
 }
 
-.infoSubDiv{ @apply
-  h-full
-  w-[45%]
+/* Container informações Status do serviço e Contato */
+.infoDiv2:hover .middleBarDecoration { @apply
+  border-l-neutral-500
 }
 
-.userGreeting { @apply
+.infoDiv2 { @apply
+  w-[80%] xs:w-[65%]
+  h-[100px]
+  left-1/2 xs:left-auto
+  -translate-x-1/2 xs:-translate-x-0
+  flex flex-row xs:flex-row
   relative
-  top-1/2
-  transform -translate-y-1/2
-  text-[125%]
+  rounded-md
+  justify-evenly
+  items-center
 }
 
+/* Seção Status */
 .infoStatusDiv, .infoContatoDiv{ @apply
   relative
   top-1/2
   transform -translate-y-1/2
 }
 
-/* Seção Status */
+.infoStatusDiv h1, .infoContatoDiv h1{ @apply
+  text-white
+}
+
+.infoSubDiv{ @apply
+  h-full
+  w-[45%]
+}
+
 .serviceStatusTitle{ @apply
   relative
   top-1/2
@@ -65,8 +83,8 @@
 
 .serviceStatusCircle{ @apply
   absolute
-  right-0
-  top-3
+  right-2 xs:right-0
+  top-1 xs:top-3
   rounded-full
   border-2 border-neutral-700
   w-[10px]
@@ -89,6 +107,7 @@
   text-[11px]
 }
 
+/* Barra decorativa */
 .middleBarDecoration{ @apply
   h-[90%]
   duration-100
@@ -121,7 +140,6 @@
 }
 
 .titleInfo { @apply
-  text-white
   text-center
   text-[20px]
   font-semibold

@@ -1,6 +1,7 @@
 /* Gráfico */
 .graficoDiv{ @apply
-  w-[65%]
+  w-full xs:w-[65%]
+  mb-1.5 xs:mb-0
   max-w-[500px]
   h-[380px]
   rounded-md

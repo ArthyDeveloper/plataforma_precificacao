@@ -174,7 +174,7 @@ const Dashboard_Client = ({user}) => {
   };
 
   return(
-    <div className="absolute top-0 left-0 w-full h-full bg-neutral-950 overflow-x-hidden">
+    <div className="containerGeral">
       <div className="clientContentDiv centerDiv">
 
         {/* Validade */}

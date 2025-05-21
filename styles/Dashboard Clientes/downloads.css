@@ -3,10 +3,10 @@
   relative
   left-1/2
   transform -translate-x-1/2
-  flex
-  flex-row
-  justify-between
-  w-full
+  flex flex-col-reverse xs:flex-row
+  xs:justify-between
+  items-center
+  w-[80%] xs:w-full
   h-fit
 }
 

@@ -12,18 +12,25 @@
 }
 
 /* Main Div */
+.containerGeral{ @apply
+  absolute
+  top-0 left-0
+  w-full
+  h-full
+  bg-neutral-950
+  overflow-x-hidden
+  border
+}
+
 .clientContentDiv{ @apply
   absolute
-  h-[90%]
-  min-h-[500px]
-  w-[650px]
-  max-w-[1000px]
+  h-fit
+  w-[400px] xs:w-[650px]
+  xs:max-w-[1000px]
   flex-row
   items-center
   rounded-md
-  /*
   border border-neutral-700
-  */
 }
 
 .dashboardContainer{ @apply
@@ -31,6 +38,7 @@
   relative
   w-[100%]
   h-fit
+  overflow-y-scroll
 }
 
 /* Seletores de Painéis */
