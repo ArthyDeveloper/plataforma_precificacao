@@ -3,6 +3,10 @@ html{ @apply
   overflow-y-hidden
 }
 
+.mainDiv{ @apply
+  !overflow-y-scroll
+}
+
 .centerDiv{ @apply
   left-1/2
   top-1/2
