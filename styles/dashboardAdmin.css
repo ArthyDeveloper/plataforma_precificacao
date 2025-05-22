@@ -1,4 +1,8 @@
 /* Page Globals */
+.mainDiv{ @apply
+  overflow-y-hidden
+}
+
 .centerDiv{ @apply
   left-1/2
   top-1/2
