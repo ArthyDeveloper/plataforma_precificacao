@@ -42,7 +42,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="absolute top-0 left-0 overflow-x-hidden w-full h-full bg-neutral-950">
+    <main className="absolute top-0 left-0 overflow-x-hidden overflow-y-scroll w-full h-full bg-neutral-950">
       {!logado ? (
         <LoginForm onLoginSuccess={handleLoginSuccess} />
       ) : (

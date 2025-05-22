@@ -1,4 +1,8 @@
 /* Page Globals */
+html{ @apply
+  overflow-y-hidden
+}
+
 .centerDiv{ @apply
   left-1/2
   top-1/2
@@ -16,21 +20,21 @@
   absolute
   top-0 left-0
   w-full
-  h-full
+  h-[1150px] xs:h-full
   bg-neutral-950
   overflow-x-hidden
-  border
+  overflow-y-hidden
 }
 
 .clientContentDiv{ @apply
   absolute
-  h-fit
+  h-full
   w-[400px] xs:w-[650px]
   xs:max-w-[1000px]
   flex-row
   items-center
   rounded-md
-  border border-neutral-700
+  overflow-y-hidden
 }
 
 .dashboardContainer{ @apply
@@ -38,7 +42,7 @@
   relative
   w-[100%]
   h-fit
-  overflow-y-scroll
+  overflow-y-hidden
 }
 
 /* Seletores de Painéis */

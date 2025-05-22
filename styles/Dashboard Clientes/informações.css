@@ -2,7 +2,7 @@
 .informationsContainer{ @apply
   flex flex-col xs:flex-row
   justify-between
-  xs:h-[100px]
+  h-fit xs:h-[100px]
   w-full
   mb-[7px]
 }
@@ -76,6 +76,7 @@
 }
 
 .serviceStatusTitle{ @apply
+  text-[15px] xs:text-[20px]
   relative
   top-1/2
   transform -translate-y-1/2
@@ -83,8 +84,8 @@
 
 .serviceStatusCircle{ @apply
   absolute
-  right-2 xs:right-0
-  top-1 xs:top-3
+  right-0
+  top-2.5 xs:top-3
   rounded-full
   border-2 border-neutral-700
   w-[10px]
@@ -132,16 +133,16 @@
   fill-white
   size-7
   relative
+  scale-90
   mt-1
-  p-1.5
   mr-1
-  bg-neutral-900
+  p-1.5
   rounded-full
+  bg-neutral-900
 }
 
 .titleInfo { @apply
   text-center
-  text-[20px]
   font-semibold
 }
 
@@ -153,5 +154,10 @@
 
 .contatoTitle{ @apply
   relative
+  text-[15px] xs:text-[20px]
   mt-[18px]
+}
+
+.contatoDesc{ @apply
+  text-[13px]
 }

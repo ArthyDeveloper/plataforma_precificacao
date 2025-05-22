@@ -251,7 +251,7 @@ const Dashboard_Client = ({user}) => {
                         </option>
                       ))}
                     </select>
-                    <select className="selectorInput ml-1 !w-[80px]" name="mês" value={mes} onChange={termosPesquisa}>
+                    <select className="selectorInput selectorInputMes" name="mês" value={mes} onChange={termosPesquisa}>
                       <option value="janeiro">Janeiro</option>
                       <option value="fevereiro">Fevereiro</option>
                       <option value="março">Março</option>

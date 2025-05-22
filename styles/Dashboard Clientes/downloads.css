@@ -14,7 +14,7 @@
 .filesDiv{ @apply
   flex-col
   relative
-  w-[220px]
+  w-[100%] xs:w-[220px]
   h-[380px]
   pb-5
   rounded-md
@@ -63,13 +63,20 @@ option{ @apply
   outline-none
   rounded-sm
   flex-row
-  w-[70px]
+  w-[58px]
   h-[25px]
+  pl-1
   appearance-auto
   border
+  text-[15px] xs:text-[12px]
   text-white
   border-neutral-700
   bg-neutral-800
+}
+
+.selectorInputMes{ @apply
+  w-[96px] xs:w-[80px]
+  ml-1
 }
 
 /* Divs Arquivos */
@@ -91,7 +98,7 @@ option{ @apply
   left-1/2
   transform -translate-x-1/2
   rounded-sm
-  w-full
+  w-[50%] xs:w-full
   h-[50px]
   text-center
   items-center
@@ -160,7 +167,7 @@ svg{ @apply
   left-1/2
   transform -translate-x-1/2
   rounded-sm
-  w-full
+  w-[75%] xs:w-full
   h-[50px]
   text-center
   items-center
