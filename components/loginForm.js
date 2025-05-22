@@ -50,6 +50,7 @@ const LoginForm = ({onLoginSuccess}) => {
         </div>
         <button onClick={() => login(user, senha)} className="loginBtn">Entrar</button>
       </div>
+      {/*<button className="suporteButton">Suporte</button>*/}
     </div>
   );
 };

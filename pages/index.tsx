@@ -12,7 +12,7 @@ export default function Home() {
   };
 
   /* Bypass Login; */
-  const logado = true; 
+  const logado = false; 
   const usuário = {
     name: "NovoDB2",
     password: "123",

@@ -78,3 +78,21 @@
   bg-white
   hover:bg-neutral-300
 }
+
+/* Suporte */
+.suporteButton{ @apply
+  absolute
+  bottom-5
+  left-1/2
+  transform -translate-x-1/2
+  text-gray-400
+  text-[10px]
+  w-fit
+  h-fit
+  p-1
+  pl-2
+  pr-2
+  rounded-sm
+  border border-neutral-700
+  hover:border-neutral-500
+}
