@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Grafico from "./Grafico";
 import "../styles/Dashboard Clientes/dashboardClient.css";
 import "../styles/Dashboard Clientes/informações.css"

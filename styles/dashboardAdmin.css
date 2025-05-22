@@ -1,6 +1,6 @@
 /* Page Globals */
 .mainDiv{ @apply
-  overflow-y-hidden
+  xs:overflow-y-hidden
 }
 
 .centerDiv{ @apply

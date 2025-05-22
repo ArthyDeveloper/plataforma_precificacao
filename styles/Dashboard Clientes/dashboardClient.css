@@ -4,7 +4,7 @@ html{ @apply
 }
 
 .mainDiv{ @apply
-  !overflow-y-scroll
+  overflow-y-scroll xs:overflow-y-hidden
 }
 
 .centerDiv{ @apply
