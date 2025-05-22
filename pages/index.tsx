@@ -12,12 +12,12 @@ export default function Home() {
   };
 
   /* Bypass Login; */
-  const logado = false; 
+  const logado = true;
   const usuário = {
     name: "NovoDB2",
     password: "123",
     userType: "client" // TODO: Remover depois, usando para bypass e render de dashboard
-  };
+  }; 
 
   //const [logado, setLogado] = useState(false);
   //const [usuário, setUsuário] = useState<User | null>(null);
@@ -42,7 +42,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="absolute top-0 left-0 overflow-x-hidden overflow-y-scroll w-full h-full bg-neutral-950">
+    <main className="mainDiv absolute top-0 left-0 overflow-x-hidden overflow-y-hidden w-full h-full bg-neutral-950">
       {!logado ? (
         <LoginForm onLoginSuccess={handleLoginSuccess} />
       ) : (
