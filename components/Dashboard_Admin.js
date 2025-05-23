@@ -14,6 +14,10 @@ const Dashboard_Admin = ({user}) => {
   const [updateField, setUpdateField] = useState("");
   const [updateData, setUpdateData] = useState("");
 
+  // Drive Link Converter;
+  const [link, setLink] = useState("");
+  const [linkConvertido, setLinkConvertido] = useState("...");
+
   // Display usuários;
   const [usersDocuments, setUsersDocuments] = useState([]);
 
@@ -124,6 +128,16 @@ const Dashboard_Admin = ({user}) => {
     }
   }
 
+  const driveConverter = () => {
+    if (link.split("/")[0] == "https:"){
+      let tempVar = link.split("/")[5];
+      console.log(link)
+      setLinkConvertido(`https://drive.google.com/uc?export=download&id=${tempVar}`);
+    } else {
+      setLinkConvertido(`https://drive.google.com/uc?export=download&id=${link}`);
+    }
+  }
+
   return(
     <div className="containerParent">
       <div className="pageButtonsContainer">
@@ -138,6 +152,9 @@ const Dashboard_Admin = ({user}) => {
           <button className={`btnAdminSelector ${buttonClasses("Update")}`}
             onClick={() => mudarPágina("Update")}
           >Update</button>
+          <button className={`btnAdminSelector ${buttonClasses("LinkDrive")}`}
+            onClick={() => mudarPágina("Drive")}
+          >Drive</button>
         </div>
 
         <div className="pagesDiv">
@@ -176,6 +193,15 @@ const Dashboard_Admin = ({user}) => {
               <input value={updateData} onChange={(e) => setUpdateData(e.target.value)} className="adminInput" placeholder="Data"/>
               <input value={updateOperation} onChange={(e) => setUpdateOperation(e.target.value)} className="adminInput" placeholder="Operação(set, unset, rename)"/>
               <button onClick={() => update()} className="adminRegisterBtn">Update</button>
+            </div>
+          )}
+
+          {/* Conversor Link Drive */}
+          {activePage === "Drive" && (
+            <div className="adminInputDiv text-wrap">
+              <input value={link} onChange={(e) => setLink(e.target.value)} className="adminInput !mt-0" placeholder="Link"/>
+              <h1 className="linkH1">{linkConvertido}</h1>
+              <button onClick={() => driveConverter()} className="adminRegisterBtn">Converter</button>
             </div>
           )}
 

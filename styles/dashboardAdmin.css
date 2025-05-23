@@ -126,3 +126,14 @@
 .adminRegisterBtn:hover{ @apply
   bg-gray-600
 }
+
+.linkH1{ @apply
+  relative
+  text-white
+  text-[18px]
+  h-[150px]
+  w-[55%]
+  bg-neutral-900
+  mt-3
+  rounded-md
+}

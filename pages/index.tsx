@@ -16,7 +16,7 @@ export default function Home() {
   const usuário = {
     name: "NovoDB2",
     password: "123",
-    userType: "client" // TODO: Remover depois, usando para bypass e render de dashboard
+    userType: "admin" // TODO: Remover depois, usando para bypass e render de dashboard
   }; 
 
   //const [logado, setLogado] = useState(false);
