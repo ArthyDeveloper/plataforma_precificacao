@@ -102,6 +102,7 @@
   text-[12px]
   duration-75
   select-none
+  mt-3 xs:mt-1.5
 }
 
 .expiredButton:active{ @apply

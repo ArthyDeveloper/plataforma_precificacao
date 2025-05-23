@@ -45,7 +45,7 @@ html{ @apply
   flex-row
   relative
   w-[100%]
-  h-fit
+  h-[980px] xs:h-[490px]
   overflow-y-hidden
 }
 
