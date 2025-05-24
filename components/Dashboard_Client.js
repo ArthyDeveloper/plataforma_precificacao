@@ -330,7 +330,7 @@ const Dashboard_Client = ({user}) => {
             </div>
             <div className="qrcodeDiv">
               <div className="qrcodeImgDiv">
-                <Image className="qrcode" src="/qrcode.svg" alt="QR Code" width={100} height={100} />
+                <Image priority={false} className="qrcode" src="/qrcode.svg" alt="QR Code" width={100} height={100} />
                 <div className="qrcodeInfoDiv hoverEffect">
                   <div className="valorDiv">
                     <h1 className="valorH1">Valor</h1>
