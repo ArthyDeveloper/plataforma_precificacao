@@ -62,7 +62,6 @@ const Dashboard_Client = ({user}) => {
       if (data) {
         setUserData(data)
         updateDataset(data)
-        console.log("DB fetch:", data)
       } else {
         console.log("Erro")
       }
@@ -73,6 +72,10 @@ const Dashboard_Client = ({user}) => {
   }
 
   const [telefoneContato, setContato] = useState("(00) 0000-0000")
+  const [destinatario, setDestinatario] = useState("...")
+  const [banco, setBanco] = useState("...")
+  const [tipoPagamento, setTipoPagamento] = useState("...")
+  const [codigoPagamento, setCodigoPagamento] = useState("...")
 
   const gatherInfos = async () => {
     const url = "/api/client/getInfos";
@@ -96,6 +99,10 @@ const Dashboard_Client = ({user}) => {
 
       if (data) {
         setContato(data.infos.user.number);
+        setDestinatario(data.infos.pagamento.destinatário);
+        setBanco(data.infos.pagamento.banco);
+        setTipoPagamento(data.infos.pagamento.tipo);
+        setCodigoPagamento(data.infos.pagamento.codigoPagamento);
       } else {
         console.log("Erro")
       }
@@ -154,7 +161,7 @@ const Dashboard_Client = ({user}) => {
   }
 
   // Pop Up Renovar Serviço;
-  const [popUp, setPopUp] = useState(false); // DEBUG: Colocar false quando estiver terminado
+  const [popUp, setPopUp] = useState(true); // DEBUG: Colocar false quando estiver terminado
   const funcPopUp = () => {
     if(popUp){
       setPopUp(false);
@@ -313,34 +320,48 @@ const Dashboard_Client = ({user}) => {
         {/* PopUp Pagamento */}
         {popUp === true && (
           <div className="popupDiv hoverEffect centerDiv">
-            <button className="closePopupButton hoverEffect" onClick={() => funcPopUp()}>
-              <svg className="closeSvg centerDiv" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <h1 className="popupTitle1">Renovação</h1>
+            <div className="popupTitleDiv">
+              <h1 className="popupTitle1">Renovação</h1>
+              <button className="closePopupButton hoverEffect" onClick={() => funcPopUp()}>
+                <svg className="closeSvg centerDiv" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
             <div className="qrcodeDiv">
-              <div className="qrcodeImg"></div>
-              <div className="qrcodeInfoDiv hoverEffect">
-                <h1 className="valorH1">Valor</h1>
-                {!userData ? (
-                  <>
-                    <h2 className="preçoH2">...</h2>
-                  </>
-                ) : (
-                  <>
-                    <h2 className="preçoH2">{userData?.searchUser?.user_DB?.serviceStatus?.price}</h2>
-                  </>
-                )}
+              <div className="qrcodeImgDiv">
+                <Image className="qrcode" src="/qrcode.svg" alt="QR Code" width={100} height={100} />
+                <div className="qrcodeInfoDiv hoverEffect">
+                  <div className="valorDiv">
+                    <h1 className="valorH1">Valor</h1>
+                    {!userData ? (
+                      <>
+                        <h2 className="preçoH2">...</h2>
+                      </>
+                    ) : (
+                      <>
+                        <h2 className="preçoH2">{userData?.searchUser?.user_DB?.serviceStatus?.price}</h2>
+                      </>
+                    )}
+                  </div>
+                  <div className="infoPagamentoDiv">
+                    <h1 className="destinoH1">Informações</h1>
+                    <h2>Destinatário: {destinatario || "..."}</h2>
+                    <h2>Banco: {banco || "..."}</h2>
+                    <h2>Tipo: {tipoPagamento || "..."}</h2>
+                  </div>
+              </div>
               </div>
             </div>
-            <h1 className="popupTitle2">Instruções</h1>
-            <ul className="instructionsList">
-              <li>1- Escaneie o QR Code;</li>
-              <li>2- Realize o pagamento;</li>
-              <li>3- Envie o comprovante;</li>
-              <li>4- Aguarde a confirmação (24Hrs);</li>
-            </ul>
+            <div className="popupSection2">
+              <h1 className="popupTitle2">Instruções</h1>
+              <ul className="instructionsList">
+                <li>1- Escaneie o QR Code;</li>
+                <li>2- Realize o pagamento;</li>
+                <li>3- Envie o comprovante;</li>
+                <li>4- Aguarde a confirmação (24Hrs);</li>
+              </ul>
+            </div>
           </div>
         )}
 
