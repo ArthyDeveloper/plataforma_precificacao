@@ -16,7 +16,7 @@ const Dashboard_Admin = ({user}) => {
 
   // Drive Link Converter;
   const [link, setLink] = useState("");
-  const [linkConvertido, setLinkConvertido] = useState("...");
+  const [linkConvertido, setLinkConvertido] = useState("");
 
   // Display usuários;
   const [usersDocuments, setUsersDocuments] = useState([]);
