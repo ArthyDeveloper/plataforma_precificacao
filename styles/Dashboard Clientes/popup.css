@@ -4,8 +4,8 @@
   flex flex-col
   text-center
   items-center
-  w-[320px] xs:w-[400px]
-  h-[700px] xs:h-[488px]
+  w-[320px]
+  h-fit
   rounded-md
   bg-neutral-900
   border border-neutral-700
@@ -173,10 +173,8 @@
   w-[100%]
   h-[70px]
   items-center
-  pl-1.5 pr-1.5
+  pl-2 pr-2
   rounded-md
-  border border-neutral-700
-
 }
 
 /* Instruções */
