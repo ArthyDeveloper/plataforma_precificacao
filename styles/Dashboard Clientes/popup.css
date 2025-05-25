@@ -70,9 +70,10 @@
 .qrcodeImgDiv{ @apply
   aspect-square
   flex flex-row
+  flex-wrap
   justify-evenly
   w-[90%]
-  h-[170px]
+  h-fit
   border border-neutral-700
   rounded-md
 }
@@ -121,6 +122,61 @@
 .valorH1, .destinoH1{ @apply
   text-white
   font-semibold
+}
+
+/* Código Copia e Cola */
+.codigoPagamentoDiv{ @apply
+  flex flex-wrap
+  w-[95%]
+  mt-2.5
+  h-[110px]
+  border border-neutral-700
+  rounded-md
+}
+
+.codigoPagamentoH1{ @apply
+  text-white
+  text-left
+  pl-2.5 pt-1
+  font-semibold
+}
+
+.copiarCodigoBtn{ @apply
+  text-white
+  text-[12px]
+  flex flex-row
+  h-fit
+  w-[75px]
+  mt-1
+  relative
+  right-[-35px]
+  pl-2 pr-2
+  pt-1 pb-1
+  justify-between
+  border border-neutral-700
+  rounded-md
+}
+
+.copiarCodigoBtn svg{ @apply
+  stroke-white
+  size-4
+}
+
+.codigoPagamentoH2{ @apply
+  flex
+  text-white
+  text-[10px]
+  text-left
+  relative
+  left-1/2
+  transform -translate-x-1/2
+  w-[100%]
+  h-[70px]
+  items-center
+  pl-1.5 pr-1.5
+  rounded-md
+  border border-neutral-700
+
 }
 
 /* Instruções */
