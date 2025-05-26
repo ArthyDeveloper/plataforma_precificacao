@@ -6,6 +6,7 @@
   items-center
   w-[320px]
   h-fit
+  !top-[542px] xs:!top-1/2 xs:transform xs:-translate-y-1/2
   rounded-md
   bg-neutral-900
   border border-neutral-700
@@ -84,9 +85,8 @@
   top-2.5
   w-[150px]
   h-[150px]
-  rounded-sm
+  rounded-md
   bg-slate-50
-  opacity-10
 }
 
 /* Informações QR Code */
@@ -102,21 +102,21 @@
 
 .valorDiv{ @apply
   relative
-  mt-2.5
+  mt-2
 }
 
 .infoPagamentoDiv{ @apply
   w-full
   h-[50px]
   flex flex-col
-  mt-2
+  mt-0
 }
 
 .infoPagamentoDiv h2{ @apply
   text-left
   text-white
   text-[10px]
-  pl-1.5
+  pl-1
 }
 
 .valorH1, .destinoH1{ @apply
@@ -142,19 +142,25 @@
 }
 
 .copiarCodigoBtn{ @apply
+  items-center
   text-white
   text-[12px]
   flex flex-row
-  h-fit
+  h-[30px]
   w-[75px]
   mt-1
   relative
   right-[-35px]
   pl-2 pr-2
   pt-1 pb-1
-  justify-between
+  justify-evenly
   border border-neutral-700
   rounded-md
+  hover:border-neutral-500
+}
+
+.copiarCodigoBtn:disabled { @apply
+  text-neutral-400
 }
 
 .copiarCodigoBtn svg{ @apply
@@ -167,10 +173,12 @@
   text-white
   text-[10px]
   text-left
+  break-words
+  break-all
   relative
   left-1/2
   transform -translate-x-1/2
-  w-[100%]
+  w-full
   h-[70px]
   items-center
   pl-2 pr-2
@@ -179,6 +187,7 @@
 
 /* Instruções */
 .popupSection2{ @apply
+  mt-1.5
   h-fit
   w-full
   relative

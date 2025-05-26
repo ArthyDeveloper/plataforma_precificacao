@@ -16,7 +16,6 @@
   relative
   w-[100%] xs:w-[220px]
   h-[380px]
-  pb-5
   rounded-md
   border
   border-neutral-700
@@ -68,7 +67,7 @@ option{ @apply
   pl-1
   appearance-auto
   border
-  text-[15px] xs:text-[12px]
+  text-[13px] xs:text-[12px]
   text-white
   border-neutral-700
   bg-neutral-800

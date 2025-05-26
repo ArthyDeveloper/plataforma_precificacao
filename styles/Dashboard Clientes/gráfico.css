@@ -1,6 +1,6 @@
 /* Gráfico */
 .graficoDiv{ @apply
-  w-full xs:w-[65%]
+  w-full xs:w-[65.5%]
   mb-1.5 xs:mb-0
   max-w-[500px]
   h-[380px]

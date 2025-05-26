@@ -42,13 +42,8 @@
   ml-1
 }
 
-/* Container informações Status do serviço e Contato */
-.infoDiv2:hover .middleBarDecoration { @apply
-  border-l-neutral-500
-}
-
 .infoDiv2 { @apply
-  w-[80%] xs:w-[65%]
+  w-[80%] xs:w-[65.5%]
   h-[100px]
   left-1/2 xs:left-auto
   -translate-x-1/2 xs:-translate-x-0
@@ -57,6 +52,11 @@
   rounded-md
   justify-evenly
   items-center
+}
+
+/* Container informações Status do serviço e Contato */
+.infoDiv2:hover .middleBarDecoration { @apply
+  border-l-neutral-500
 }
 
 /* Seção Status */
