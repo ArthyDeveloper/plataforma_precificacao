@@ -8,6 +8,7 @@ const Dashboard_Admin = ({user}) => {
   const [senha, setSenha] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
+  const [userType, setUserType] = useState("client")
 
   // Update Field;
   const [updateOperation, setUpdateOperation] = useState("");
@@ -83,7 +84,8 @@ const Dashboard_Admin = ({user}) => {
           userGreeting: usuárioGreeting,
           senha: senha,
           email: email,
-          telefone: telefone
+          telefone: telefone,
+          userType: userType
         })
       });
       
@@ -181,6 +183,7 @@ const Dashboard_Admin = ({user}) => {
               <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>
+              <input value={userType} onChange={(e) => setUserType(e.target.value)} className="adminInput" placeholder="admin ou client"/>
               <button onClick={() => register()} className="adminRegisterBtn">Registrar</button>
             </div>
           )}

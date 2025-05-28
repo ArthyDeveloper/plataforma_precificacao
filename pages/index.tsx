@@ -8,19 +8,19 @@ export default function Home() {
   type User = {
     name: string;
     password: string;
-    userType: "admin" | "client"; // TODO: Remover depois
+    userType: "admin" | "client";
   };
 
-  /* Bypass Login; */
+  /* Bypass Login; 
   const logado = true;
   const usuário = {
-    name: "NovoDB2",
-    password: "123",
-    userType: "client" // TODO: Remover depois, usando para bypass e render de dashboard
-  }; 
+    name: "user",
+    password: "pass",
+    userType: "userType" // Login via código.
+  }; */
 
-  //const [logado, setLogado] = useState(false);
-  //const [usuário, setUsuário] = useState<User | null>(null);
+  const [logado, setLogado] = useState(false);
+  const [usuário, setUsuário] = useState<User | null>(null);
   
   const handleLoginSuccess = (data: User) => {
     setLogado(true);
@@ -38,7 +38,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    document.title = "Título"; // Alterar para título fixo
+    document.title = "Precifique";
   }, [])
 
   return (
