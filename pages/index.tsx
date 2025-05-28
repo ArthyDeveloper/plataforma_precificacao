@@ -11,14 +11,6 @@ export default function Home() {
     userType: "admin" | "client";
   };
 
-  /* Bypass Login; 
-  const logado = true;
-  const usuário = {
-    name: "user",
-    password: "pass",
-    userType: "userType" // Login via código.
-  }; */
-
   const [logado, setLogado] = useState(false);
   const [usuário, setUsuário] = useState<User | null>(null);
   
