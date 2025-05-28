@@ -180,7 +180,7 @@ const Dashboard_Admin = ({user}) => {
             <div className="adminInputDiv">
               <input value={usuário} onChange={(e) => setUser(e.target.value)} className="adminInput !mt-0" placeholder="Nome"/>
               <input value={usuárioGreeting} onChange={(e) => setUserGreeting(e.target.value)} className="adminInput" placeholder="Saudação"/>
-              <input value={senha} onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
+              <input value={senha} type="password" onChange={(e) => setSenha(e.target.value)} className="adminInput" placeholder="Senha"/>
               <input value={email} onChange={(e) => setEmail(e.target.value)} className="adminInput" placeholder="Email"/>
               <input value={telefone} onChange={(e) => setTelefone(e.target.value)} className="adminInput" placeholder="Telefone"/>
               <input value={userType} onChange={(e) => setUserType(e.target.value)} className="adminInput" placeholder="admin ou client"/>
